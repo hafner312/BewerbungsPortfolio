@@ -10,22 +10,28 @@ export function Hero() {
       className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #eef4f7 0%, #ffffff 45%, #e6f5f3 100%)' }}
     >
+      <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div
-        className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
+        className="blob-drift absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
         style={{ background: 'var(--color-accent)' }}
       />
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-10 blur-3xl"
+        className="blob-drift-slow absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-10 blur-3xl"
         style={{ background: 'var(--color-accent-2)' }}
+      />
+      <div
+        className="blob-drift absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-10 blur-3xl"
+        style={{ background: 'var(--color-accent-cyan)' }}
       />
 
       <div className="relative z-10 max-w-3xl">
         <span
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border backdrop-blur-sm"
           style={{
-            background: 'var(--color-accent-glow)',
-            color: 'var(--color-accent)',
-            borderColor: 'rgba(41, 120, 160, 0.3)',
+            background: 'rgba(255, 255, 255, 0.6)',
+            color: 'var(--color-accent-light)',
+            borderColor: 'rgba(13, 148, 136, 0.3)',
+            boxShadow: '0 2px 12px rgba(13, 148, 136, 0.12)',
           }}
         >
           <span className="relative flex h-2.5 w-2.5">
@@ -41,7 +47,7 @@ export function Hero() {
           Offen f&uuml;r neue Stellen
         </span>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: 'var(--color-text-primary)' }}>
+        <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 leading-tight pb-1">
           Patrik Hafner
         </h1>
 

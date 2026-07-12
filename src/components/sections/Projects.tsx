@@ -16,27 +16,18 @@ export function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => {
             const isHighlight = !!project.highlight
-            const restShadow = isHighlight
-              ? '0 6px 26px rgba(13,148,136,0.22)'
-              : '0 2px 10px rgba(15,23,42,0.07)'
             return (
               <AnimatedSection key={project.title} delay={i * 0.08}>
                 <div
-                  className="relative h-full flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  style={{
-                    background: 'var(--color-bg-surface)',
-                    border: isHighlight
-                      ? '2px solid var(--color-accent)'
-                      : '1px solid var(--color-border)',
-                    boxShadow: restShadow,
-                  }}
-                  onMouseOver={e => {
-                    (e.currentTarget as HTMLDivElement).style.boxShadow =
-                      '0 14px 38px rgba(13,148,136,0.28)'
-                  }}
-                  onMouseOut={e => {
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = restShadow
-                  }}
+                  className="card relative h-full flex flex-col rounded-2xl overflow-hidden"
+                  style={
+                    isHighlight
+                      ? {
+                          border: '2px solid var(--color-accent)',
+                          boxShadow: '0 6px 26px rgba(13,148,136,0.22)',
+                        }
+                      : undefined
+                  }
                 >
                   <div className={`relative h-36 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
                     <span className="text-6xl drop-shadow-lg">{project.icon}</span>

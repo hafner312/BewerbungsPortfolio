@@ -29,26 +29,14 @@ export function Skills() {
             const items = skills.filter((s) => s.category === cat)
             return (
               <AnimatedSection key={cat} delay={i * 0.08}>
-                <div
-                  className="h-full rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
-                  style={{
-                    background: 'var(--color-bg-surface)',
-                    border: '1px solid var(--color-border)',
-                    boxShadow: '0 2px 10px rgba(15,23,42,0.07)',
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 12px 34px rgba(13,148,136,0.20)'
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 2px 10px rgba(15,23,42,0.07)'
-                  }}
-                >
+                <div className="card h-full rounded-2xl p-6">
                   <div className="flex items-center gap-3 mb-5">
                     <span
-                      className="flex items-center justify-center w-11 h-11 rounded-xl shrink-0"
-                      style={{ background: 'var(--color-text-primary)' }}
+                      className="flex items-center justify-center w-11 h-11 rounded-xl shrink-0 shadow-md"
+                      style={{
+                        background:
+                          'linear-gradient(135deg, var(--color-text-primary), #1e3a4f)',
+                      }}
                     >
                       <Icon size={20} className="text-white" />
                     </span>

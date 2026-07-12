@@ -28,10 +28,10 @@ export function Contact() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 rounded-lg bg-[var(--color-bg-base)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] transition-colors'
+    'w-full px-4 py-3 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:bg-white focus:border-[var(--color-accent)] focus:ring-4 focus:ring-[var(--color-accent-glow)] transition-all duration-200'
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Kontakt"
@@ -86,7 +86,11 @@ export function Contact() {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="card space-y-4 rounded-3xl p-6 md:p-8"
+                noValidate
+              >
                 <div>
                   <input
                     {...register('from_name', { required: 'Name ist erforderlich' })}
