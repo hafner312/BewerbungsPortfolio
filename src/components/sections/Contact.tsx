@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { AlertCircle, CheckCircle, Mail, MapPin, Send } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
@@ -66,15 +66,6 @@ export function Contact() {
                 >
                   <FaGithub size={18} className="text-[var(--color-accent)]" />
                   github.com/hafner312
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/patrik-hafner-6a0a55234/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-[var(--color-text-secondary)] hover:text-[var(--color-accent-light)] transition-colors"
-                >
-                  <FaLinkedin size={18} className="text-[var(--color-accent)]" />
-                  LinkedIn-Profil
                 </a>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '../ui/Button'
@@ -77,18 +77,6 @@ export function Hero() {
             aria-label="GitHub"
           >
             <FaGithub size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/patrik-hafner-6a0a55234/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors"
-            style={{ color: 'var(--color-text-muted)' }}
-            onMouseOver={e => (e.currentTarget.style.color = 'var(--color-accent)')}
-            onMouseOut={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin size={24} />
           </a>
           <a
             href="mailto:hafner312@gmail.com"
