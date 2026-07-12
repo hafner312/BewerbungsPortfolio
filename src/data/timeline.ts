@@ -1,0 +1,82 @@
+import type { TimelineEntry } from '../types'
+
+export const timeline: TimelineEntry[] = [
+  {
+    date: '06/2025',
+    title: 'Cambridge English Preliminary Zertifikat',
+    organization: 'Cambridge University Press & Assessment',
+    location: 'Schweiz',
+    description: [
+      'Preliminary English Test mit Grade B abgeschlossen',
+      'CEFR Level B1 mit Overall Score 155',
+    ],
+    type: 'certification',
+  },
+  {
+    date: '2025 – 2026',
+    title: 'Praktikum Applikationsentwickler EFZ',
+    organization: 'Holiday Home AG',
+    location: 'Steinhausen',
+    description: [
+      'Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ',
+      'Mitarbeit in der IT-Abteilung',
+    ],
+    type: 'work',
+  },
+  {
+    date: '2024 – 2025',
+    title: 'Ausbildung zum Applikationsentwickler EFZ',
+    organization: 'WISS Zürich',
+    location: 'Altstetten, Zürich',
+    description: [
+      '1. Ausbildungsjahr zum Applikationsentwickler EFZ',
+      'Schwerpunkte: Softwareentwicklung, Webentwicklung und Datenbanken',
+    ],
+    type: 'education',
+  },
+  {
+    date: '2023',
+    title: 'Metallbauer',
+    organization: 'Strebel AG',
+    location: 'Ennetbürgen',
+    description: [
+      'Montagearbeiten und präzise Fertigungsaufgaben nach technischen Zeichnungen',
+      'Umsetzung von Projekten mit hohem Qualitätsanspruch',
+    ],
+    type: 'work',
+  },
+  {
+    date: '2022 – 2023',
+    title: 'Metallbauer',
+    organization: 'ATP Hydraulik AG',
+    location: 'Küssnacht am Rigi',
+    description: [
+      'Effiziente Problemlösung und Anpassung an spezifische Kundenanforderungen',
+      'Verantwortung für die Einhaltung strenger Qualitäts- und Terminvorgaben',
+    ],
+    type: 'work',
+  },
+  {
+    date: '2015 – 2022',
+    title: 'Metallbauer (verschiedene Betriebe)',
+    organization: 'Verschiedene Unternehmen',
+    location: 'Kanton Uri / Zentralschweiz',
+    description: [
+      'Tätigkeit in wechselnden Projekten in der Metallverarbeitung',
+      'Verantwortung für technische Umsetzung und Qualitätskontrolle',
+      'Flexibilität und Anpassungsfähigkeit in verschiedenen Arbeitsumgebungen und Teams',
+    ],
+    type: 'work',
+  },
+  {
+    date: '11/2011 – 07/2015',
+    title: 'Metallbauer EFZ (Lehre)',
+    organization: 'Louis Zurfluh AG',
+    location: 'Seedorf, Uri',
+    description: [
+      'Abschluss der Berufsausbildung als Metallbauer EFZ',
+      'Fokus auf Montage- und Fertigungsaufgaben mit hohen Präzisionsanforderungen',
+    ],
+    type: 'education',
+  },
+]
