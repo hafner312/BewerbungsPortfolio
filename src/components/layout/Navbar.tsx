@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { motion, useScroll, useSpring } from 'framer-motion'
 
 const navLinks = [
   { label: '\u00dcber mich', href: '#about' },
@@ -13,6 +14,8 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, restDelta: 0.001 })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -75,6 +78,15 @@ export function Navbar() {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
+
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+        style={{
+          scaleX: progress,
+          background: 'linear-gradient(90deg, var(--color-accent), var(--color-accent-cyan))',
+        }}
+        aria-hidden="true"
+      />
 
       {menuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-[var(--color-border)] shadow-md px-6 py-4">

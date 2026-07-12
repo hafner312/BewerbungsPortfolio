@@ -22,20 +22,21 @@ export function About() {
           <AnimatedSection>
             <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
               <div
-                className="w-full h-full rounded-2xl overflow-hidden"
+                className="w-full h-full rounded-3xl overflow-hidden p-[3px]"
                 style={{
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 8px 30px rgba(13,148,136,0.18)',
+                  background:
+                    'linear-gradient(135deg, var(--color-accent), var(--color-accent-cyan) 55%, var(--color-accent-2))',
+                  boxShadow: '0 12px 40px rgba(13,148,136,0.25)',
                 }}
               >
                 <img
                   src="/BewerbungsPortfolio/photo.jpeg"
                   alt="Patrik Hafner"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top rounded-[21px]"
                 />
               </div>
               <div
-                className="absolute -inset-1 rounded-2xl -z-10 opacity-30"
+                className="absolute -inset-4 rounded-[2rem] -z-10 opacity-20 blur-2xl"
                 style={{ background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-green))' }}
               />
             </div>
@@ -63,24 +64,13 @@ export function About() {
 
             <div className="grid grid-cols-2 gap-4 mt-8">
               {stats.map(({ icon: Icon, label, value }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-3 p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1"
-                  style={{
-                    background: 'var(--color-bg-surface)',
-                    border: '1px solid var(--color-border)',
-                    boxShadow: '0 2px 10px rgba(15,23,42,0.06)',
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.boxShadow = '0 12px 30px rgba(13,148,136,0.18)'
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.boxShadow = '0 2px 10px rgba(15,23,42,0.06)'
-                  }}
-                >
+                <div key={label} className="card flex items-center gap-3 p-4 rounded-2xl">
                   <span
-                    className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0"
-                    style={{ background: 'var(--color-text-primary)' }}
+                    className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0 shadow-md"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, var(--color-text-primary), #1e3a4f)',
+                    }}
                   >
                     <Icon size={18} className="text-white" />
                   </span>

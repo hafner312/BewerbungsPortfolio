@@ -18,6 +18,7 @@
   --color-bg-elevated: #eef4f7;
   --color-accent: #0d9488;
   --color-accent-light: #0f766e;
+  --color-accent-cyan: #0891b2;
   --color-accent-glow: rgba(13, 148, 136, 0.1);
   --color-accent-2: #f59e0b;
   --color-accent-green: #f59e0b;
@@ -30,13 +31,12 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 14px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 2px 6px rgba(15, 23, 42, 0.06), 0 18px 40px rgba(13, 148, 136, 0.18);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Kein eigener *-Reset: Tailwinds Preflight (layer base) übernimmt das.
+   Ein ungelayerter Reset würde alle gelayerten Utilities überstimmen. */
 
 html,
 body {
@@ -46,6 +46,24 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Anchor targets stop below the fixed navbar instead of sliding under it */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -59,6 +77,18 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Keyboard focus clearly visible, mouse clicks stay clean */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .mono {
@@ -88,4 +118,52 @@ h1, h2, h3, h4 {
 /* Shadow utility for light mode cards */
 .card-shadow {
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* Unified modern card: soft rest state, lifted accent state on hover */
+.card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(13, 148, 136, 0.35);
+}
+
+/* Gradient headline text (keeps dark tone for contrast, teal sheen at the end) */
+.gradient-text {
+  background: linear-gradient(115deg, var(--color-text-primary) 0%, #134e4a 55%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Subtle blueprint grid for the hero backdrop */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(13, 148, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 148, 136, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* Slow drift for hero blobs */
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -18px) scale(1.06); }
+  66% { transform: translate(-16px, 14px) scale(0.97); }
+}
+.blob-drift {
+  animation: blob-drift 16s ease-in-out infinite;
+}
+.blob-drift-slow {
+  animation: blob-drift 22s ease-in-out infinite reverse;
 }

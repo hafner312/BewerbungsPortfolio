@@ -19,7 +19,7 @@ const documents = [
 
 export function References() {
   return (
-    <section id="references" className="py-24 px-6 bg-[var(--color-bg-base)]">
+    <section id="references" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Zeugnisse"
@@ -29,14 +29,7 @@ export function References() {
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {documents.map((doc, i) => (
             <AnimatedSection key={doc.title} delay={i * 0.1}>
-              <figure
-                className="h-full overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 2px 10px rgba(15,23,42,0.07)',
-                  background: 'var(--color-bg-surface)',
-                }}
-              >
+              <figure className="card h-full overflow-hidden rounded-2xl">
                 <a
                   href={doc.pdf}
                   target="_blank"

@@ -36,7 +36,7 @@ const certificates = [
 
 export function Learning() {
   return (
-    <section id="learning" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
+    <section id="learning" className="py-24 px-6 bg-[var(--color-bg-base)]">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Weiterbildung"
@@ -46,14 +46,7 @@ export function Learning() {
         <div className="grid gap-6 lg:grid-cols-2">
           {certificates.map((certificate, i) => (
             <AnimatedSection key={certificate.title} delay={i * 0.1}>
-              <figure
-                className="h-full overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 2px 10px rgba(15,23,42,0.07)',
-                  background: 'var(--color-bg-surface)',
-                }}
-              >
+              <figure className="card h-full overflow-hidden rounded-2xl">
                 <a
                   href={certificate.image}
                   target="_blank"
@@ -88,20 +81,7 @@ export function Learning() {
                 href={col.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block h-full rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 2px 10px rgba(15,23,42,0.07)',
-                  background: 'var(--color-bg-surface)',
-                }}
-                onMouseOver={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    '0 12px 34px rgba(13,148,136,0.20)'
-                }}
-                onMouseOut={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    '0 2px 10px rgba(15,23,42,0.07)'
-                }}
+                className="card group block h-full rounded-2xl overflow-hidden"
               >
                 <div className={`h-28 bg-gradient-to-br ${col.color} flex items-center justify-center gap-4`}>
                   <col.Icon size={38} className="text-white" />

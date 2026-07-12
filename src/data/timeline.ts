@@ -2,17 +2,6 @@ import type { TimelineEntry } from '../types'
 
 export const timeline: TimelineEntry[] = [
   {
-    date: '06/2025',
-    title: 'Cambridge English Preliminary Zertifikat',
-    organization: 'Cambridge University Press & Assessment',
-    location: 'Schweiz',
-    description: [
-      'Preliminary English Test mit Grade B abgeschlossen',
-      'CEFR Level B1 mit Overall Score 155',
-    ],
-    type: 'certification',
-  },
-  {
     date: '2025 – 2026',
     title: 'Praktikum Applikationsentwickler EFZ',
     organization: 'Holiday Home AG',
