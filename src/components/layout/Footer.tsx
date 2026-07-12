@@ -1,5 +1,5 @@
 import { ArrowUp, Mail, MapPin } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 const quickLinks = [
   { label: '\u00dcber mich', href: '#about' },
@@ -11,11 +11,6 @@ const quickLinks = [
 
 const socials = [
   { icon: FaGithub, href: 'https://github.com/hafner312', label: 'GitHub' },
-  {
-    icon: FaLinkedin,
-    href: 'https://www.linkedin.com/in/patrik-hafner-6a0a55234/',
-    label: 'LinkedIn',
-  },
   { icon: Mail, href: 'mailto:hafner312@gmail.com', label: 'E-Mail' },
 ]
 
