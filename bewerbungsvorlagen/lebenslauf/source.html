@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Lebenslauf – Patrik Hafner</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #003d74;
+    --navy-light: #e8eef3;
+    --text: #2b2b2b;
+    --text-light: #555;
+    --sidebar-bg: #f4f5f6;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    display: grid;
+    grid-template-columns: 66% 34%;
+    background: #fff;
+  }
+  /* ---------- LEFT COLUMN ---------- */
+  .main {
+    padding: 14mm 10mm 14mm 14mm;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', serif;
+    flex-shrink: 0;
+  }
+  .name {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 12px;
+  }
+  .section-heading .badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-heading h2 {
+    font-size: 17px;
+    color: var(--navy);
+    margin: 0;
+    font-weight: 700;
+  }
+  .kurzprofil {
+    padding-left: 36px;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: #cfd6dc;
+  }
+  .entry {
+    position: relative;
+    padding-bottom: 16px;
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    column-gap: 10px;
+  }
+  .entry:last-child { padding-bottom: 0; }
+  .entry .dot {
+    position: absolute;
+    left: -36px;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .entry .date {
+    font-size: 11.5px;
+    color: var(--text-light);
+    padding-top: 1px;
+  }
+  .entry .content h3 {
+    margin: 0 0 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+  }
+  .entry .content .org {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  .entry .content ul {
+    margin: 4px 0 0;
+    padding-left: 16px;
+  }
+  .entry .content ul li {
+    margin-bottom: 2px;
+  }
+  .entry.no-date {
+    grid-template-columns: 0 1fr;
+  }
+  .entry.no-date .date { display: none; }
+
+  /* ---------- RIGHT COLUMN ---------- */
+  .sidebar {
+    background: var(--sidebar-bg);
+  }
+  .photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+  .sidebar-inner {
+    padding: 18px 16px 24px;
+  }
+  .sidebar .section-heading {
+    margin-top: 18px;
+  }
+  .sidebar .section-heading:first-child {
+    margin-top: 0;
+  }
+  .sidebar-block {
+    padding-left: 36px;
+  }
+  .sidebar-block .label {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: #111;
+    margin-top: 10px;
+  }
+  .sidebar-block .label:first-child { margin-top: 0; }
+  .sidebar-block .value {
+    color: var(--text-light);
+    margin-bottom: 2px;
+  }
+  .sidebar-block .skill {
+    margin-bottom: 9px;
+    color: var(--text-light);
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: auto; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= LEFT / MAIN ================= -->
+  <div class="main">
+
+    <div class="header">
+      <div class="avatar">ph</div>
+      <div class="name">Patrik Hafner</div>
+    </div>
+
+    <div class="section-heading">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      </div>
+      <h2>Kurzprofil</h2>
+    </div>
+    <p class="kurzprofil">
+      Engagierter Quereinsteiger mit Leidenschaft für Softwareentwicklung, kreativen Ideen und
+      einer schnellen Auffassungsgabe. Aktuell im 2. Ausbildungsjahr zum Applikationsentwickler
+      EFZ, mit praktischer Erfahrung im Betrieb und bereit, innovative Lösungen zu gestalten und
+      umzusetzen.
+    </p>
+
+    <div class="section-heading">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+      </div>
+      <h2>Beruflicher Werdegang</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">2025<br>– bis jetzt</div>
+        <div class="content">
+          <h3>Praktikum Applikationsentwickler EFZ</h3>
+          <div class="org">Holiday Home AG, Steinhausen</div>
+          <ul>
+            <li>Betrieblich organisiertes Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ (Schwerpunkt Applikationsentwicklung)</li>
+            <li>Mitarbeit in der IT-Abteilung</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">2024<br>– 2025</div>
+        <div class="content">
+          <h3>Ausbildung als Informatiker/Applikationsentwickler</h3>
+          <div class="org">Schule: WISS Zürich, Altstetten</div>
+          <ul>
+            <li>Schulisch organisiertes 1. Ausbildungsjahr zum Applikationsentwickler EFZ</li>
+            <li>Schwerpunkte: Softwareentwicklung, Webentwicklung, Datenbanken</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">2023</div>
+        <div class="content">
+          <h3>Metallbauer</h3>
+          <div class="org">Strebel AG, Ennetbürgen</div>
+          <ul>
+            <li>Durchführung von Montagearbeiten und präzisen Fertigungsaufgaben nach technischen Zeichnungen</li>
+            <li>Umsetzung von Projekten mit hohem Qualitätsanspruch</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">2022<br>– 2023</div>
+        <div class="content">
+          <h3>Metallbauer</h3>
+          <div class="org">ATP Hydraulik AG, Küssnacht am Rigi</div>
+          <ul>
+            <li>Effiziente Problemlösung und Anpassung an spezifische Kundenanforderungen</li>
+            <li>Verantwortung für die Einhaltung strenger Qualitäts- und Terminvorgaben</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">2015<br>– 2022</div>
+        <div class="content">
+          <h3>Metallbauer (verschiedene Projekte und Lehrbetrieb)</h3>
+          <ul>
+            <li>Fortführung der Arbeit im Lehrbetrieb nach Abschluss der Ausbildung mit Fokus auf Montage- und Fertigungsaufgaben</li>
+            <li>Tätigkeit in wechselnden Projekten in der Metallverarbeitung mit Verantwortung für technische Umsetzung und Qualitätskontrolle</li>
+            <li>Flexibilität und Anpassungsfähigkeit in verschiedenen Arbeitsumgebungen und Teams</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-heading">
+      <div class="badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+      </div>
+      <h2>Ausbildung</h2>
+    </div>
+    <div class="timeline">
+      <div class="entry">
+        <div class="dot"></div>
+        <div class="date">11/2011<br>– 07/2015</div>
+        <div class="content">
+          <h3>Metallbauer EFZ (Lehre)</h3>
+          <div class="org">Louis Zurfluh AG, Seedorf</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+      </div>
+      <h2>Referenzen</h2>
+    </div>
+    <div class="timeline">
+      <div class="entry no-date">
+        <div class="dot"></div>
+        <div></div>
+        <div class="content">
+          <h3>Siro Longatti</h3>
+          <div class="org">Schulleiter, WISS Schulen für Wirtschaft Informatik Immobilien</div>
+          <div>+41 58 404 42 68</div>
+        </div>
+      </div>
+      <div class="entry no-date">
+        <div class="dot"></div>
+        <div></div>
+        <div class="content">
+          <h3>Andre Näf</h3>
+          <div class="org">Inhaber/Geschäftsführer, Strebel AG</div>
+          <div>+41 41 620 27 64</div>
+        </div>
+      </div>
+      <div class="entry no-date">
+        <div class="dot"></div>
+        <div></div>
+        <div class="content">
+          <h3>Ajroski Serdi</h3>
+          <div class="org">Abteilungsleiter, ATP Hydraulik AG</div>
+          <div>+41 41 799 49 74</div>
+        </div>
+      </div>
+      <div class="entry no-date">
+        <div class="dot"></div>
+        <div></div>
+        <div class="content">
+          <h3>Louis Zurfluh AG</h3>
+          <div class="org">Unternehmen verkauft</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= RIGHT / SIDEBAR ================= -->
+  <div class="sidebar">
+    <img class="photo" src="assets/photo.jpg" alt="Patrik Hafner">
+    <div class="sidebar-inner">
+
+      <div class="section-heading">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h2>Persönliche Daten</h2>
+      </div>
+      <div class="sidebar-block">
+        <div class="label">Anschrift</div>
+        <div class="value">Patrik Hafner<br>Hagenstrasse 41<br>6460 Altdorf UR</div>
+        <div class="label">E-Mail</div>
+        <div class="value">hafner312@gmail.com</div>
+        <div class="label">Geburtsdatum</div>
+        <div class="value">18.03.1994</div>
+        <div class="label">Staatsbürgerschaft</div>
+        <div class="value">Schweiz</div>
+        <div class="label">Telefon</div>
+        <div class="value">+41 79 501 26 53</div>
+        <div class="label">Geburtsort</div>
+        <div class="value">Altdorf UR</div>
+      </div>
+
+      <div class="section-heading">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        </div>
+        <h2>Kenntnisse</h2>
+      </div>
+      <div class="sidebar-block">
+        <div class="skill">Teamarbeit und Kommunikationsstärke</div>
+        <div class="skill">Kreativität und Innovationsgeist</div>
+        <div class="skill">Eigeninitiative</div>
+        <div class="skill">Analytisches Denken und Problemlösung</div>
+        <div class="skill">Programmiersprachen: Java, MySQL, JavaScript, Linux</div>
+        <div class="skill">Webauftritt erstellen mit: HTML, CSS, JavaScript</div>
+        <div class="skill">Umgang mit Cloud-Diensten</div>
+        <div class="skill">AI Technologien</div>
+        <div class="skill">UX</div>
+      </div>
+
+      <div class="section-heading">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>
+        </div>
+        <h2>Interessen</h2>
+      </div>
+      <div class="sidebar-block">
+        <div class="value">
+          Musik produzieren und hören, Animes schauen, Partys, mit Freunden etwas
+          unternehmen, Wandern, Bewegung, Gaming, Programmieren, Webseiten gestalten,
+          kreative App-Ideen umsetzen, Bücher lesen.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
