@@ -62,7 +62,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               {stats.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="card flex items-center gap-3 p-4 rounded-2xl">
                   <span
@@ -74,8 +74,8 @@ export function About() {
                   >
                     <Icon size={18} className="text-white" />
                   </span>
-                  <div>
-                    <p className="font-semibold text-sm leading-tight" style={{ color: 'var(--color-text-primary)' }}>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-sm leading-tight break-words" style={{ color: 'var(--color-text-primary)' }}>
                       {value}
                     </p>
                     <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
