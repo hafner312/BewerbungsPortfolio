@@ -1,4 +1,5 @@
-import { BookMarked, ExternalLink, GraduationCap, Layers } from 'lucide-react'
+import { useState } from 'react'
+import { BookMarked, ChevronDown, ExternalLink, GraduationCap, Layers } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -35,6 +36,8 @@ const certificates = [
 ]
 
 export function Learning() {
+  const [expanded, setExpanded] = useState(false)
+
   return (
     <section id="learning" className="py-24 px-6 bg-[var(--color-bg-base)]">
       <div className="max-w-6xl mx-auto">
@@ -43,36 +46,59 @@ export function Learning() {
           subtitle="Zertifikate und kontinuierliches Lernen"
         />
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {certificates.map((certificate, i) => (
-            <AnimatedSection key={certificate.title} delay={i * 0.1}>
-              <figure className="card h-full overflow-hidden rounded-2xl">
-                <a
-                  href={certificate.image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-[var(--color-bg-elevated)]"
-                  aria-label={`${certificate.title} in voller Größe öffnen`}
-                >
-                  <img
-                    src={certificate.image}
-                    alt={certificate.title}
-                    className="aspect-[3/4] w-full object-contain p-3"
-                    loading="lazy"
-                  />
-                </a>
-                <figcaption className="border-t border-[var(--color-border)] p-5">
-                  <h3 className="font-bold text-base leading-snug" style={{ color: 'var(--color-text-primary)' }}>
-                    {certificate.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-                    {certificate.caption}
-                  </p>
-                </figcaption>
-              </figure>
-            </AnimatedSection>
-          ))}
+        <div className="flex justify-center mb-10">
+          <button
+            type="button"
+            onClick={() => setExpanded(v => !v)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all"
+            style={{
+              background: 'var(--color-accent-glow)',
+              color: 'var(--color-accent)',
+              border: '1px solid rgba(13,148,136,0.25)',
+            }}
+            aria-expanded={expanded}
+          >
+            <ChevronDown
+              size={18}
+              className="transition-transform duration-300"
+              style={{ transform: expanded ? 'rotate(180deg)' : 'none' }}
+            />
+            {expanded ? 'Zertifikat ausblenden' : `${certificates.length} Zertifikate anzeigen`}
+          </button>
         </div>
+
+        {expanded && (
+          <div className="grid gap-6 lg:grid-cols-2 mb-10">
+            {certificates.map((certificate, i) => (
+              <AnimatedSection key={certificate.title} delay={i * 0.1}>
+                <figure className="card h-full overflow-hidden rounded-2xl">
+                  <a
+                    href={certificate.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-[var(--color-bg-elevated)]"
+                    aria-label={`${certificate.title} in voller Größe öffnen`}
+                  >
+                    <img
+                      src={certificate.image}
+                      alt={certificate.title}
+                      className="aspect-[3/4] w-full object-contain p-3"
+                      loading="lazy"
+                    />
+                  </a>
+                  <figcaption className="border-t border-[var(--color-border)] p-5">
+                    <h3 className="font-bold text-base leading-snug" style={{ color: 'var(--color-text-primary)' }}>
+                      {certificate.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                      {certificate.caption}
+                    </p>
+                  </figcaption>
+                </figure>
+              </AnimatedSection>
+            ))}
+          </div>
+        )}
 
         <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {collections.map((col, i) => (
