@@ -47,7 +47,7 @@ export const timeline: TimelineEntry[] = [
   },
   {
     date: '2015 – 2022',
-    title: 'Metallbauer (verschiedene Betriebe)',
+    title: 'Verschiedene Einsätze (Metallbau, Logistik, Zivildienst)',
     organization: 'Verschiedene Unternehmen',
     location: 'Kanton Uri / Zentralschweiz',
     description: [
@@ -58,7 +58,7 @@ export const timeline: TimelineEntry[] = [
     type: 'work',
   },
   {
-    date: '11/2011 – 07/2015',
+    date: '08/2011 – 07/2015',
     title: 'Metallbauer EFZ (Lehre)',
     organization: 'Louis Zurfluh AG',
     location: 'Seedorf, Uri',
