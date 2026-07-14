@@ -66,7 +66,7 @@ export function Hero() {
           <Button as="a" href="#projects" variant="primary" size="lg">
             Meine Projekte
           </Button>
-          <Button as="a" href="/BewerbungsPortfolio/bewerbungsunterlagen/cv.pdf" variant="secondary" size="lg">
+          <Button as="a" href="/BewerbungsPortfolio/bewerbungsunterlagen/cv.pdf?v=20260714" variant="secondary" size="lg">
             Lebenslauf als PDF
           </Button>
         </div>
