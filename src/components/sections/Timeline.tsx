@@ -64,7 +64,7 @@ export function Timeline() {
         />
 
         <div className="flex justify-center mb-10">
-          <Button as="a" href="/BewerbungsPortfolio/bewerbungsunterlagen/cv.pdf" variant="secondary">
+          <Button as="a" href="/BewerbungsPortfolio/bewerbungsunterlagen/cv.pdf?v=20260714" variant="secondary">
             <Download size={16} />
             Lebenslauf als PDF
           </Button>
