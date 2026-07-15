@@ -173,6 +173,14 @@ export function Contact() {
                     </>
                   )}
                 </Button>
+
+                <p className="text-xs text-center text-[var(--color-text-muted)]">
+                  Mit dem Absenden stimmst du der Verarbeitung deiner Angaben gemäss{' '}
+                  <a href="/BewerbungsPortfolio/datenschutz.html" className="underline hover:text-[var(--color-accent)]">
+                    Datenschutzerklärung
+                  </a>{' '}
+                  zu.
+                </p>
               </form>
             )}
           </AnimatedSection>

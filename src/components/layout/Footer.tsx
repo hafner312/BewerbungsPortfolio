@@ -116,8 +116,16 @@ export function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid var(--color-border)' }}
         >
-          <p className="text-sm text-[var(--color-text-muted)]">
-            © {new Date().getFullYear()} Patrik Hafner · Mit React und TypeScript gebaut
+          <p className="text-sm text-[var(--color-text-muted)] flex flex-wrap items-center justify-center gap-x-2">
+            <span>© {new Date().getFullYear()} Patrik Hafner · Mit React und TypeScript gebaut</span>
+            <span aria-hidden="true">·</span>
+            <a href="/BewerbungsPortfolio/impressum.html" className="hover:text-[var(--color-accent)] transition-colors">
+              Impressum
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/BewerbungsPortfolio/datenschutz.html" className="hover:text-[var(--color-accent)] transition-colors">
+              Datenschutz
+            </a>
           </p>
           <a
             href="#hero"
