@@ -29,6 +29,7 @@ export const skills: Skill[] = [
   { name: 'CI/CD', category: 'devops' },
   { name: 'Microsoft Entra ID', category: 'devops' },
   { name: 'Azure', category: 'devops' },
+  { name: 'Netzwerkgrundlagen', category: 'devops' },
 
   // Werkzeuge
   { name: 'Git', category: 'tools' },
