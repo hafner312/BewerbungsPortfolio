@@ -1,9 +1,9 @@
-# Regenerates public/cv.pdf from bewerbungsvorlagen/lebenslauf/source.html. Run after editing source.html.
+# Regenerates public/bewerbungsunterlagen/lebenslauf.pdf from bewerbungsvorlagen/lebenslauf/source.html. Run after editing source.html.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 $source = Join-Path $PSScriptRoot "source.html"
-$siteOutput = Join-Path $root "public\bewerbungsunterlagen\cv.pdf"
+$siteOutput = Join-Path $root "public\bewerbungsunterlagen\lebenslauf.pdf"
 $tmp = Join-Path $PSScriptRoot "output.pdf"
 
 $uri = "file:///$($source -replace '\\','/')"
@@ -14,4 +14,4 @@ Start-Process -FilePath $edge -ArgumentList @(
 
 if (-not (Test-Path $tmp)) { throw "PDF wurde nicht erzeugt: $tmp" }
 Move-Item -Force $tmp $siteOutput
-Write-Output "cv.pdf aktualisiert: $siteOutput"
+Write-Output "lebenslauf.pdf aktualisiert: $siteOutput"

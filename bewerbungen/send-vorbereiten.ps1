@@ -6,7 +6,7 @@
 # Portfolio-Link in der E-Mail erreichbar):
 #   .\send-vorbereiten.ps1 -To "klemens.buob@sisag.ch" -Subject "Bewerbung als Softwareentwickler (m/w)" `
 #     -BodyFile ".\sisag-ag-softwareentwickler\email.txt" `
-#     -Attachments ".\sisag-ag-softwareentwickler\anschreiben.pdf" `
+#     -Attachments ".\sisag-ag-softwareentwickler\bewerbung.pdf" `
 #     -FromAccount "hafner312@gmail.com"
 
 param(
