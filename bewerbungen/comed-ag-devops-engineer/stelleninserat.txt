@@ -1,0 +1,69 @@
+COMED AG - DevOps Engineer (m/w/d 60-100%)
+==========================================
+Quelle:      professional.ch (gefunden auf careers.jobeagle.io)
+             + direkte Firmenausschreibung (COMED AG Karriereseite)
+Publiziert:  21.05.2026
+Ort:         Lehnplatz 10, 6460 Altdorf UR
+Pensum:      60-100%
+Start:       Sofort
+Vertrag:     Festanstellung
+Firma:       COMED AG, Lehnplatz 10, 6460 Altdorf UR
+
+Hinweis: Inserat-Titel auf der Plattform lautet "Software Engineer (Altdorf)",
+im Text selbst ist die Stelle als "DevOps Engineer (m/w/d 60-100%)" ausgeschrieben.
+
+UEBER DIE FIRMA
+---------------
+IT-Full-Service-Provider mit Sitz in der Zentralschweiz, seit 1986 IT-Partner
+fuer KMU, Schulen, Institutionen und das Gesundheitswesen. 40 Mitarbeitende an
+den Standorten Altdorf, Schwyz, Stans und Sins. Bereiche: Cloud & Infrastruktur,
+Netzwerk, Security, Service & Support sowie Software Engineering.
+
+AUFGABEN
+--------
+Schnittstelle zwischen Software Engineering und System Engineering:
+- Entwicklung und Weiterentwicklung interner Applikationen und Tools
+- Planung und Umsetzung von Automatisierungsloesungen (intern und bei Kunden)
+- Entwicklung und Betrieb von intelligenten Workflows mit KI-Agents
+- Scripting und Prozessautomatisierung (z. B. Python oder PowerShell)
+- Einsatz und Weiterentwicklung von Low-Code/No-Code-Plattformen wie n8n
+- Deployment und Containerisierung mit Docker und Container-Orchestrierung
+- Aufbereitung und Einfuehrung neuer Technologiethemen fuer Team und Kunden
+- Enge Zusammenarbeit mit System Engineers
+
+ANFORDERUNGEN
+-------------
+- Abgeschlossene Ausbildung in Informatik (Lehre oder Studium), eine
+  gleichwertige Ausbildung oder vergleichbare Praxiserfahrung
+- Programmiererfahrung in mindestens einer Sprache: Python, C#, Java
+- Erfahrung mit Docker / Containern und modernen Deployment-Konzepten
+- Interesse oder erste Erfahrungen mit KI-Technologien und
+  Automatisierungsplattformen (z. B. n8n)
+- Freude an abwechslungsreicher Arbeit - vom Konzept bis zur fertigen Loesung
+- Kenntnisse in einem Frontend-Framework (z. B. Vue, React oder Angular)
+- Selbstaendige, strukturierte Arbeitsweise
+- Sprachen: Deutsch & Englisch
+
+ANGEBOT
+-------
+- Gezielte Investition in berufliche und persoenliche Weiterentwicklung
+- Foerderung von Innovation, neue Ideen willkommen
+- Starkes Team, regelmaessiger Austausch, Teamevents
+- Faire Bezahlung, attraktives Bonusmodell
+- 26 Ferientage zum Start, Perspektive auf bis zu 30 Tage pro Jahr
+- Schlanke Organisationsstrukturen
+
+KONTAKT
+-------
+COMED AG
+Lehnplatz 10
+6460 Altdorf UR
+Bewerbung ueber Online-Formular ("Jetzt bewerben")
+Link: https://www.professional.ch/jo... (in der Quelle gekuerzt, noch zu ergaenzen)
+
+WEITERE OFFENE STELLEN BEI COMED (Stand 22.07.2026)
+---------------------------------------------------
+- System Engineer, 60-100%, Stans
+- System Engineer, 80-100%, Sins
+- System Engineer, 60-100%, Altdorf
+- IT Lehrstelle EFZ 2028, 100%, Altdorf

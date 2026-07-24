@@ -2,17 +2,6 @@ import type { Project } from '../types'
 
 export const projects: Project[] = [
   {
-    title: 'Alternative Booking Finder',
-    description:
-      'Meine IPA (Individuelle Praktische Arbeit), das Abschlussprojekt meiner Ausbildung zum Applikationsentwickler EFZ. C#-Applikation zur Suche und Verwaltung alternativer Buchungsoptionen mit strukturiertem Backend und sauberem Code-Design.',
-    tags: ['C#', '.NET'],
-    githubUrl: 'https://github.com/hafner312/AlternativeBookingFinder',
-    featured: true,
-    icon: '\uD83D\uDD0D',
-    gradient: 'from-[#0891b2] to-[#0e7490]',
-    highlight: 'IPA · Abschlussprojekt',
-  },
-  {
     title: 'Pflanzenlexikon',
     description:
       'Web-App mit Java Spring Boot Backend und MongoDB-Datenbank. Enthält vollständige Backend-Logik zur Verwaltung von Pflanzendaten.',
@@ -71,15 +60,5 @@ export const projects: Project[] = [
     featured: false,
     icon: '\uD83D\uDED2',
     gradient: 'from-[#0d9488] to-[#0891b2]',
-  },
-  {
-    title: 'Bewerbungsportfolio',
-    description:
-      'Dieses Portfolio, gebaut mit React, TypeScript, Vite und Tailwind CSS. Das Deployment läuft automatisch über GitHub Actions auf GitHub Pages.',
-    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Actions'],
-    githubUrl: 'https://github.com/hafner312/BewerbungsPortfolio',
-    featured: true,
-    icon: '\uD83D\uDCBC',
-    gradient: 'from-[#0f766e] to-[#155e75]',
   },
 ]

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bewerbung – Patrik Hafner – Digitec Galaxus AG</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --accent: #1b6e4a;
+    --text: #2b2b2b;
+    --text-light: #555;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    display: grid;
+    grid-template-columns: 68% 32%;
+    background: #fff;
+  }
+  .main { padding: 11mm 12mm 8mm 16mm; }
+  .sidebar { padding: 11mm 14mm 8mm 8mm; }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+  .avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', serif;
+    flex-shrink: 0;
+  }
+  .name { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .role { font-size: 14px; color: var(--accent); margin-top: 2px; }
+
+  .meta-line { margin-bottom: 4px; }
+  .place-date { margin: 8px 0 14px; }
+  .recipient { margin-bottom: 16px; }
+  .recipient div { margin-bottom: 2px; }
+
+  .subject { font-weight: 700; margin: 0 0 12px; }
+  .salutation { margin-bottom: 10px; }
+  .body p { margin: 0 0 6px; text-align: left; }
+
+  .closing { margin-top: 4px; }
+  .signature {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 24px;
+    color: var(--text);
+    margin-top: 6px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-heading .badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-heading h2 {
+    font-size: 15px;
+    color: var(--accent);
+    margin: 0;
+    font-weight: 700;
+  }
+  .sidebar-block .label {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: #111;
+    margin-top: 12px;
+  }
+  .sidebar-block .label:first-child { margin-top: 0; }
+  .sidebar-block .value { color: var(--text-light); margin-bottom: 2px; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= LEFT / MAIN ================= -->
+  <div class="main">
+
+    <div class="header">
+      <div class="avatar">ph</div>
+      <div>
+        <div class="name">Patrik Hafner</div>
+        <div class="role">Applikationsentwickler EFZ (IPA-Wiederholung)</div>
+      </div>
+    </div>
+
+    <div class="place-date">Altdorf, 23. Juli 2026</div>
+
+    <div class="recipient">
+      <div>Digitec Galaxus AG</div>
+      <div>Patrick Meise</div>
+      <div>Pfingstweidstrasse 60</div>
+      <div>8005 Zürich</div>
+    </div>
+
+    <p class="subject">Bewerbung im Software Engineering – Ref. Software Architect, Team Appic</p>
+
+    <div class="body">
+      <p class="salutation">Guten Tag Patrick Meise,</p>
+
+      <p>
+        Ihre Ausschreibung als Software Architect für das Team Appic habe ich gelesen: Der
+        Tech-Stack ist genau meiner – TypeScript und React sind meine Hauptwerkzeuge, dazu
+        kommen .NET/C# und MongoDB. Die geforderten zwei Jahre als Software Architect sind es
+        nicht. Statt eine Bewerbung einzureichen, die genau daran scheitert, frage ich Sie
+        direkt: Gibt es bei der Digitec Galaxus AG eine Einstiegsposition im Software
+        Engineering, aus der heraus ich mich in diese Richtung entwickeln kann?
+      </p>
+
+      <p>
+        Die schulische Ausbildung zum Applikationsentwickler EFZ sowie das dazugehörige
+        betriebliche Praktikum habe ich vollständig absolviert; lediglich die Note der
+        abschliessenden praktischen Arbeit (IPA) hat für das Diplom knapp nicht ausgereicht.
+        Diese möchte ich nun möglichst zeitnah nachholen – und würde mich sehr freuen, dies
+        bei der Digitec Galaxus AG tun zu können.
+      </p>
+
+      <p>
+        Praxis habe ich mit TypeScript, JavaScript, React, C#, .NET, Java und SQL, dazu MongoDB
+        und REST-Schnittstellen; mit Docker, Git und CI/CD arbeite ich in eigenen Projekten.
+        Diese setze ich von der Datenbank bis ins UI selbst um – meine Portfolio-Website ist mit
+        React und TypeScript gebaut und wird automatisiert deployt.
+      </p>
+
+      <p>
+        Vor der Informatik habe ich über zehn Jahre als Metallbauer gearbeitet. Von dort bringe
+        ich mit, was sich in keinem Kurs vermitteln lässt: strukturiertes, präzises Arbeiten
+        und den Anspruch, eine Sache sauber fertigzustellen – keine schlechte Grundlage für
+        Clean Code und eine ordentliche Testabdeckung. Ein Umfeld, das eigenverantwortliches
+        Denken einfordert, ist genau meines; Zürich ist von Altdorf aus gut erreichbar.
+      </p>
+
+      <p>
+        Eine Anstellung ist für mich ab dem 01.08.2026 möglich. Über ein Gespräch würde ich
+        mich sehr freuen – auch dann, wenn es dabei um eine andere, passendere Position bei
+        Ihnen geht.
+      </p>
+
+      <p class="closing">Mit freundlichen Grüssen</p>
+      <div class="signature">Patrik Hafner</div>
+    </div>
+
+  </div>
+
+  <!-- ================= RIGHT / SIDEBAR ================= -->
+  <div class="sidebar">
+    <div class="section-heading">
+      <div class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h2>Persönliche Daten</h2>
+    </div>
+    <div class="sidebar-block">
+      <div class="label">E-Mail</div>
+      <div class="value">hafner312@gmail.com</div>
+      <div class="label">Portfolio</div>
+      <div class="value">hafner312.github.io/<br>BewerbungsPortfolio</div>
+      <div class="label">Anschrift</div>
+      <div class="value">Patrik Hafner<br>Hagenstrasse 41<br>6460 Altdorf Uri</div>
+      <div class="label">Geburtsdatum</div>
+      <div class="value">18.03.1994</div>
+      <div class="label">Staatsbürgerschaft</div>
+      <div class="value">Schweiz</div>
+      <div class="label">Telefon</div>
+      <div class="value">+41 79 501 26 53</div>
+      <div class="label">Geburtsort</div>
+      <div class="value">Altdorf</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

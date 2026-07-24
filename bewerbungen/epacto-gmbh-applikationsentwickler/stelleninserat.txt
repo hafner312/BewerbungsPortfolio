@@ -1,0 +1,61 @@
+Epacto GmbH - Applikationsentwickler/in (100%)
+==============================================
+Quelle:      jobs.ch ("Einfach bewerben" / Online-Formular)
+Publiziert:  15.07.2026
+Ort:         6370 Stans
+Pensum:      100%
+Vertrag:     Festanstellung
+Sprachen:    Deutsch (fortgeschritten)
+Kontakt:     Nicolas Widmer
+Firma:       Epacto GmbH, Stans, www.epacto.ch, 1-10 Mitarbeitende
+
+UEBER DIE FIRMA
+---------------
+Junges Ingenieurbuero fuer moderne elektronische Systeme - von smarter Hardware
+bis zu skalierbaren Softwareloesungen. Eigenes Telematiksystem fuer die
+praeventive Instandhaltung von Lokomotiven, dazu individuelle Hard- und
+Softwareprojekte fuer Kunden.
+
+AUFGABEN
+--------
+- Mitarbeit bei der Entwicklung neuer Applikationen: Backend-Services,
+  Webapplikationen, Embedded-Software
+- Features von der Idee bis zum produktiven Einsatz umsetzen, eigene Ideen
+  einbringen
+- Testing & QS: Planung, Durchfuehrung und Dokumentation von Softwaretests
+  (Web, Backend, Embedded); automatisierte Tests entwickeln und pflegen;
+  Aufbau einer nachhaltigen Teststrategie; Fehleranalyse und -behebung;
+  Code-Reviews
+- Bereitstellung und Betrieb: Mitverantwortung fuer verteilte IT-Systeme,
+  Analyse von Logs, Metriken und Systemverhalten im laufenden Betrieb
+- Ausbau der Infrastruktur, Mitdenken bei Architektur- und
+  Technologieentscheidungen, Automatisieren und Vereinfachen
+
+ANFORDERUNGEN
+-------------
+- Erfahrung in der Softwareentwicklung
+- Interesse an Webtechnologien, APIs und Embedded-Systemen
+- Idealerweise Erfahrung im Softwaretesting / QS
+- Grundverstaendnis fuer Linux und verteilte Systeme
+- Freude daran, Probleme ganzheitlich zu verstehen
+- Selbststaendige Arbeitsweise und Teamgeist
+
+WIR BIETEN
+----------
+- Echte Verantwortung, produktiv laufende Software
+- Abwechslung: Web, Embedded, IoT, Backend, Testing
+- Startup-Spirit, kurze Entscheidungswege, Gestaltungsspielraum
+
+EINSCHAETZUNG
+-------------
+Sehr guter Match: echte Applikationsentwickler-Stelle ohne Senior-Anforderung,
+kein Studium verlangt, "Erfahrung in der Softwareentwicklung" ist offen
+formuliert. Standort Stans ist von Altdorf gut erreichbar. Anschreiben daher
+als normale, selbstbewusste Bewerbung formuliert (nicht als Anfrage nach einer
+Einstiegsposition wie bei den Senior-Ausschreibungen).
+Luecke: keine Embedded-Erfahrung - offen benannt und mit Interesse verbunden.
+
+BEWERBUNG
+---------
+Ueber Online-Formular ("Anschreiben hinzufuegen", max. 2500 Zeichen):
+siehe anschreiben-formularfeld.txt (2397 Zeichen).

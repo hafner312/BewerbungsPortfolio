@@ -1,0 +1,57 @@
+Digitec Galaxus AG - Software Architect (w/m/d)
+==============================================
+Quelle:      jobs.ch
+Publiziert:  14.07.2026
+Ort:         Pfingstweidstrasse 60, 8005 Zuerich
+Pensum:      80-100%
+Vertrag:     Festanstellung
+Sprachen:    Deutsch (fliessend), Englisch (fliessend)
+Kontakt:     Patrick Meise
+Firma:       Digitec Galaxus AG, Zuerich
+
+UEBER DIE FIRMA
+---------------
+Fuehrende Schweizer E-Commerce-Plattform, ueber 4'000 Mitarbeitende in der
+Schweiz, Deutschland und Serbien. Werte: kooperativ, innovativ, piratisch,
+eigenverantwortlich, ambitioniert. Eigenes Tech-Radar, Techblog, Hackathons.
+
+DIE ROLLE (Team Appic)
+----------------------
+Treibende Kraft hinter der technischen Weiterentwicklung der Mobile Apps.
+Bruecke zwischen Feature-Teams und App, Design der Schnittstellen zwischen
+Onlineshop und mobilen Apps.
+
+Aufgaben:
+- Coaching von Software Engineers, komplexe Inhalte verstaendlich vermitteln
+- Unterstuetzung des Teams bei Umsetzung: Clean Code, nachhaltige Architektur,
+  angemessene Testabdeckung
+- Enge Zusammenarbeit mit dem Domain Architect
+- Technische Verantwortung fuer Mobile Apps und Push-Notification-Modul,
+  Integration der Web-Applikation in native Apps via WebViews, Lead beim
+  Schnittstellen-Design Onlineshop <-> Apps
+- Koordination nativer Features fuer iOS und Android mit den Feature-Teams
+
+Anforderungen:
+- Starke Erfolgsbilanz als praktisch arbeitender Software Engineer,
+  mind. 2 Jahre Erfahrung als Software Architect
+- Bachelor/Master Informatik (ETH/UNI/FH) oder ausreichend Berufserfahrung
+- Ausgezeichnete Kenntnisse in TypeScript und React; zusaetzlich eine oder
+  mehrere Technologien aus dem Stack: .NET/C#, MongoDB, GraphQL, Kotlin, Swift
+- Idealerweise Erfahrung mit dem End-to-End-Lifecycle von Mobile Apps
+  (Android & iOS) oder Motivation, sich gezielt einzuarbeiten
+- Verhandlungssicheres Deutsch, sehr gutes Englisch (Arbeitssprache)
+
+Benefits:
+- Homeoffice-Moeglichkeiten, bis zu 8 Wochen Workation, jede Position auch 80%
+- 2'000 EDU-Punkte fuer Weiterbildung
+- 25 Tage Ferien, Mitarbeiterpreise im Shop, Abos zum Firmentarif
+- Mitarbeiterevents: Hackathons, Wandern, Ski, LAN-Parties, Friday Night Drinks
+
+EINSCHAETZUNG
+-------------
+Senior-Architektur-Rolle (mind. 2 Jahre als Software Architect) - fachlich
+deutlich ueber dem aktuellen Erfahrungsstand. Technologisch aber sehr nah:
+TypeScript, React, .NET/C# und MongoDB sind alles vorhandene Kenntnisse,
+das Portfolio selbst ist mit React + TypeScript gebaut.
+Bewerbung daher bewusst als Anfrage nach einer Einstiegsposition im
+Software Engineering formuliert (gleiche Strategie wie AKROS AG / VZ).

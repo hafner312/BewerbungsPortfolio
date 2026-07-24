@@ -1,0 +1,19 @@
+Guten Tag Nicolas Widmer
+
+Ihre Ausschreibung als Applikationsentwickler habe ich gelesen – und selten hat eine Stelle so genau das beschrieben, was ich suche: ein kleines Team, echte Verantwortung und eine Bandbreite von Backend-Services über Webapplikationen bis zur Infrastruktur dahinter.
+
+Praxis habe ich mit C#, .NET, Java, TypeScript, JavaScript, React, HTML, CSS und SQL, dazu REST-APIs, Docker, Git und CI/CD. Meine eigenen Projekte setze ich von der Datenbank über das UI bis zum Deployment selbst um – meine Portfolio-Website ist mit React und TypeScript gebaut und wird automatisiert ausgeliefert. Linux- und Netzwerkgrundlagen sind mir aus der schulischen Ausbildung bekannt. Mit Embedded-Systemen habe ich bisher nicht gearbeitet; gerade dieser Teil Ihrer Arbeit reizt mich aber besonders, weil dort Software und reale Technik direkt aufeinandertreffen.
+
+Testing sehe ich nicht als Anhängsel, sondern als Teil der Entwicklung: einen Fehler sauber reproduzieren, die Ursache verstehen und ihn so absichern, dass er nicht wiederkommt. Genau diese Arbeitsweise bringe ich mit.
+
+Die schulische Ausbildung zum Applikationsentwickler EFZ sowie das dazugehörige betriebliche Praktikum habe ich vollständig absolviert; lediglich die Note der abschliessenden praktischen Arbeit (IPA) hat für das Diplom knapp nicht ausgereicht. Diese möchte ich nun möglichst zeitnah nachholen – und würde mich sehr freuen, dies bei der Epacto GmbH tun zu können.
+
+Vor der Informatik habe ich über zehn Jahre als Metallbauer gearbeitet. Aus diesem Umfeld bringe ich mit, was sich schlecht in einem Kurs lernen lässt: strukturiertes, präzises Arbeiten, Verlässlichkeit und den Anspruch, eine Sache richtig fertig zu machen. Maschinen, Instandhaltung und die Frage, warum etwas im Betrieb ausfällt, sind mir vertraut – Ihr Telematiksystem für die präventive Instandhaltung von Lokomotiven ist mir inhaltlich deshalb alles andere als fremd.
+
+Stans ist von meinem Wohnort Altdorf aus gut erreichbar, und ein Umfeld mit kurzen Entscheidungswegen ist genau das, in dem ich arbeiten möchte. Eine Anstellung ist für mich ab dem 01.08.2026 möglich.
+
+Meinen Lebenslauf und Beispiele meiner Projekte finden Sie unter https://hafner312.github.io/BewerbungsPortfolio/ – über ein Gespräch würde ich mich sehr freuen.
+
+Freundliche Grüsse
+Patrik Hafner
++41 79 501 26 53 | hafner312@gmail.com

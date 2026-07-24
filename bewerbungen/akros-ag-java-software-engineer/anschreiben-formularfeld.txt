@@ -1,0 +1,17 @@
+Sehr geehrter Herr Zimmermann,
+
+Ihre Ausschreibung als Java Software Engineer Fullstack spricht mich an, weil sie genau die Kombination beschreibt, in die ich mich beruflich entwickeln will: Java mit Spring/Quarkus im Backend, ein modernes Frontend und der Anspruch, einfache und qualitativ hochwertige Lösungen zu bauen statt unnötig komplexe.
+
+Gleichzeitig will ich offen sein: Die geforderten fünf Jahre Berufserfahrung und einen Hochschulabschluss bringe ich nicht mit. Ich stehe am Anfang meiner Laufbahn als Applikationsentwickler. Die schulische Ausbildung zum Applikationsentwickler EFZ an der WISS Zürich und das dazugehörige betriebliche Praktikum habe ich vollständig absolviert; lediglich die Note der abschliessenden praktischen Arbeit (IPA) hat für das Diplom knapp nicht ausgereicht. Diese möchte ich nun möglichst zeitnah nachholen – und würde mich sehr freuen, dies bei AKROS tun zu können. Ich bewerbe mich deshalb bewusst nicht auf die Senior-Rolle, sondern mit der Frage, ob bei AKROS eine Einstiegsposition denkbar ist, aus der heraus ich mich in diese Richtung entwickeln kann.
+
+Mitbringen kann ich Praxis mit Java, C#, .NET, TypeScript, JavaScript, HTML und SQL aus Praktikum und Selbststudium sowie Netzwerkgrundlagen aus der Ausbildung. Meine eigenen Projekte setze ich von der Datenbank über das UI bis zum Deployment selbst um; Beispiele finden Sie auf https://hafner312.github.io/BewerbungsPortfolio/
+
+Vor der Informatik habe ich über zehn Jahre als Metallbauer gearbeitet. Aus diesem Umfeld bringe ich mit, was sich schlecht in einem Kurs lernen lässt: strukturiertes, präzises Arbeiten, Verlässlichkeit und den Anspruch, eine Sache richtig fertig zu machen. Neues Wissen eigne ich mir schnell an, und ich arbeite gerne im Team auf ein gemeinsames Ziel hin.
+
+Mein Interesse gilt in erster Linie dem Standort Luzern, der von meinem Wohnort Altdorf sehr gut erreichbar ist. Die Bereitschaft, für ein Projekt zwei bis drei Mal pro Woche nach Zürich oder Bern zu pendeln, bringe ich ebenfalls mit. Deutsch ist meine Muttersprache, Englisch beherrsche ich gut.
+
+Eine Anstellung ist für mich ab dem 01.08.2026 möglich. Über ein Gespräch würde ich mich sehr freuen, auch wenn es dabei um eine andere, passendere Position bei AKROS gehen sollte.
+
+Freundliche Grüsse
+Patrik Hafner
++41 79 501 26 53 | hafner312@gmail.com
