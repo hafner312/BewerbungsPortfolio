@@ -17,6 +17,7 @@ export const skills: Skill[] = [
   { name: '.NET / ASP.NET', category: 'backend' },
   { name: 'Blazor', category: 'backend' },
   { name: 'Java', category: 'backend' },
+  { name: 'Android (Java)', category: 'backend' },
   { name: 'Python', category: 'backend' },
   { name: 'SQL', category: 'backend' },
   { name: 'MongoDB', category: 'backend' },

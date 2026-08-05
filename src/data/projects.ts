@@ -54,8 +54,8 @@ export const projects: Project[] = [
   {
     title: 'Einkaufsliste',
     description:
-      'Java-App zur Verwaltung von Einkaufslisten. Eine einfache und übersichtliche Anwendung mit sauberem Java-Code.',
-    tags: ['Java'],
+      'Native Android-App zur Verwaltung von Einkaufslisten, entwickelt mit Java und Android Studio. Eine einfache und übersichtliche Anwendung mit sauberem Code.',
+    tags: ['Android', 'Java'],
     githubUrl: 'https://github.com/hafner312/Einkaufsliste',
     featured: false,
     icon: '\uD83D\uDED2',
