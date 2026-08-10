@@ -8,6 +8,7 @@
   :root {
     --navy: #003d74;
     --navy-light: #e8eef3;
+    --accent: #0d9488;
     --text: #2b2b2b;
     --text-light: #555;
     --sidebar-bg: #f4f5f6;
@@ -16,10 +17,10 @@
   html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     color: var(--text);
     font-size: 13px;
-    line-height: 1.45;
+    line-height: 1.48;
   }
   .page {
     width: 210mm;
@@ -61,9 +62,23 @@
     flex-shrink: 0;
   }
   .name {
-    font-size: 30px;
+    font-size: 29px;
     font-weight: 700;
     color: var(--navy);
+    line-height: 1.15;
+  }
+  .role {
+    font-size: 12.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: 0.2px;
+  }
+  .header-rule {
+    height: 2px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    margin: 0 0 20px;
+    border-radius: 1px;
   }
   .section-heading {
     display: flex;
@@ -80,12 +95,15 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,61,116,0.35);
   }
   .section-heading h2 {
-    font-size: 17px;
+    font-size: 14.5px;
     color: var(--navy);
     margin: 0;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
   }
   .kurzprofil {
     padding-left: 36px;
@@ -120,7 +138,12 @@
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: var(--navy);
+    background: #fff;
+    border: 2.5px solid var(--navy);
+  }
+  .timeline-werdegang .entry:first-child .dot {
+    background: var(--accent);
+    border-color: var(--accent);
   }
   .entry .date {
     font-size: 11.5px;
@@ -208,8 +231,12 @@
 
     <div class="header">
       <div class="avatar">ph</div>
-      <div class="name">Patrik Hafner</div>
+      <div>
+        <div class="name">Patrik Hafner</div>
+        <div class="role">Applikationsentwickler EFZ (IPA-Wiederholung)</div>
+      </div>
     </div>
+    <div class="header-rule"></div>
 
     <div class="section-heading">
       <div class="badge">
@@ -219,9 +246,9 @@
     </div>
     <p class="kurzprofil">
       Engagierter Quereinsteiger mit Leidenschaft für Softwareentwicklung, kreativen Ideen und
-      einer schnellen Auffassungsgabe. Aktuell im 2. Ausbildungsjahr zum Applikationsentwickler
-      EFZ, mit praktischer Erfahrung im Betrieb und bereit, innovative Lösungen zu gestalten und
-      umzusetzen.
+      einer schnellen Auffassungsgabe. Schulische Ausbildung und betriebliches Praktikum zum
+      Applikationsentwickler EFZ vollständig absolviert, bereit, innovative Lösungen zu gestalten
+      und umzusetzen.
     </p>
 
     <div class="section-heading">
@@ -230,17 +257,17 @@
       </div>
       <h2>Beruflicher Werdegang</h2>
     </div>
-    <div class="timeline">
+    <div class="timeline timeline-werdegang">
 
       <div class="entry">
         <div class="dot"></div>
-        <div class="date">2025<br>– bis jetzt</div>
+        <div class="date">2025<br>– Juli 2026</div>
         <div class="content">
           <h3>Praktikum Applikationsentwickler EFZ</h3>
           <div class="org">Holiday Home AG, Steinhausen</div>
           <ul>
-            <li>Betrieblich organisiertes Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ (Schwerpunkt Applikationsentwicklung)</li>
-            <li>Mitarbeit in der IT-Abteilung</li>
+            <li>Betrieblich organisiertes Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ (Schwerpunkt Applikationsentwicklung) vollständig absolviert</li>
+            <li>Mitgearbeitet in der IT-Abteilung</li>
           </ul>
         </div>
       </div>
@@ -358,14 +385,6 @@
           <div>[entfernt]</div>
         </div>
       </div>
-      <div class="entry no-date">
-        <div class="dot"></div>
-        <div></div>
-        <div class="content">
-          <h3>Louis Zurfluh AG</h3>
-          <div class="org">Unternehmen verkauft</div>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -387,7 +406,7 @@
         <div class="label">E-Mail</div>
         <div class="value">hafner312@gmail.com</div>
         <div class="label">Portfolio-Website</div>
-        <div class="value">hafner312.github.io/BewerbungsPortfolio</div>
+        <div class="value"><a href="https://hafner312.github.io/BewerbungsPortfolio/" style="color: #0563c1; text-decoration: underline;">hafner312.github.io/BewerbungsPortfolio</a></div>
         <div class="label">Geburtsdatum</div>
         <div class="value">18.03.1994</div>
         <div class="label">Staatsbürgerschaft</div>
