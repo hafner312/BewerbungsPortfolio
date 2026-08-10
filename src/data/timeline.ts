@@ -2,13 +2,13 @@ import type { TimelineEntry } from '../types'
 
 export const timeline: TimelineEntry[] = [
   {
-    date: '2025 – 2026',
+    date: '2025 – Juli 2026',
     title: 'Praktikum Applikationsentwickler EFZ',
     organization: 'Holiday Home AG',
     location: 'Steinhausen',
     description: [
-      'Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ',
-      'Mitarbeit in der IT-Abteilung',
+      'Betrieblich organisiertes Praktikum im 2. Ausbildungsjahr zum Applikationsentwickler EFZ vollständig absolviert',
+      'Mitgearbeitet in der IT-Abteilung',
     ],
     type: 'work',
   },
