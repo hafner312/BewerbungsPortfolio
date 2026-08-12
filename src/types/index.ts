@@ -8,6 +8,8 @@ export interface Project {
   icon: string
   gradient: string
   highlight?: string
+  /** Hinweis unter dem Live-Demo-Link, z.B. bei Gratis-Hosting mit Kaltstart-Verzoegerung */
+  hostingNote?: string
 }
 
 export interface Skill {

@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Github } from 'lucide-react'
+import { Award, ExternalLink, Github, Info } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
@@ -86,6 +86,16 @@ export function Projects() {
                         </a>
                       )}
                     </div>
+
+                    {project.liveUrl && project.hostingNote && (
+                      <p
+                        className="flex items-start gap-1.5 text-xs leading-relaxed"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        <Info size={13} className="mt-0.5 flex-shrink-0" />
+                        {project.hostingNote}
+                      </p>
+                    )}
                   </div>
                 </div>
               </AnimatedSection>
