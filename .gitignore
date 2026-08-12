@@ -16,6 +16,12 @@ dist-ssr/
 .env.local
 .env.*.local
 
+# Persoenliche Bewerbungsunterlagen und Arbeitsbemuehungen (enthalten Daten
+# Dritter bzw. sensible persoenliche Daten) - nur lokal, nie ins oeffentliche
+# Repo pushen.
+/bewerbungen/
+/Arbeitsbemühungen/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json
