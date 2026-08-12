@@ -19,10 +19,11 @@ export const projects: Project[] = [
   {
     title: 'Einkaufsliste',
     description:
-      'Native Android-App zur Verwaltung von Einkaufslisten, entwickelt mit Java und Android Studio. Eine einfache und übersichtliche Anwendung mit sauberem Code.',
-    tags: ['Android', 'Java'],
+      'Ursprünglich als native Android-App mit Java entwickelt, zusätzlich als eigenständige Web-App mit Spring Boot umgesetzt: Artikel mit Menge, Einheit und Ort erfassen und beim Einkaufen abhaken.',
+    tags: ['Java', 'Spring Boot', 'Android'],
     githubUrl: 'https://github.com/hafner312/Einkaufsliste',
-    hostingNote: 'Native Android-App – im Browser nicht lauffähig, daher keine Live-Demo. Code auf GitHub einsehbar.',
+    liveUrl: 'https://einkaufsliste-w6c7.onrender.com',
+    hostingNote,
     featured: false,
     icon: '🛒',
     gradient: 'from-[#0d9488] to-[#0891b2]',
