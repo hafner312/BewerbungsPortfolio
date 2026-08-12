@@ -87,7 +87,7 @@ export function Projects() {
                       )}
                     </div>
 
-                    {project.liveUrl && project.hostingNote && (
+                    {project.hostingNote && (
                       <p
                         className="flex items-start gap-1.5 text-xs leading-relaxed"
                         style={{ color: 'var(--color-text-muted)' }}

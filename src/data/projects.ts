@@ -22,6 +22,7 @@ export const projects: Project[] = [
       'Native Android-App zur Verwaltung von Einkaufslisten, entwickelt mit Java und Android Studio. Eine einfache und übersichtliche Anwendung mit sauberem Code.',
     tags: ['Android', 'Java'],
     githubUrl: 'https://github.com/hafner312/Einkaufsliste',
+    hostingNote: 'Native Android-App – im Browser nicht lauffähig, daher keine Live-Demo. Code auf GitHub einsehbar.',
     featured: false,
     icon: '🛒',
     gradient: 'from-[#0d9488] to-[#0891b2]',
