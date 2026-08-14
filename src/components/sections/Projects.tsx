@@ -2,9 +2,12 @@ import { Award, ExternalLink, Github, Info } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
+import { useSpotlight } from '../ui/useSpotlight'
 import { projects } from '../../data/projects'
 
 export function Projects() {
+  const onMove = useSpotlight()
+
   return (
     <section id="projects" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
       <div className="max-w-6xl mx-auto">
@@ -19,18 +22,20 @@ export function Projects() {
             return (
               <AnimatedSection key={project.title} delay={i * 0.08}>
                 <div
-                  className="card relative h-full flex flex-col rounded-2xl overflow-hidden"
+                  onMouseMove={onMove}
+                  className={`card spotlight group relative h-full flex flex-col rounded-2xl overflow-hidden ${
+                    isHighlight ? 'pulse-ring' : ''
+                  }`}
                   style={
                     isHighlight
-                      ? {
-                          border: '2px solid var(--color-accent)',
-                          boxShadow: '0 6px 26px rgba(13,148,136,0.22)',
-                        }
+                      ? { border: '2px solid var(--color-accent)' }
                       : undefined
                   }
                 >
-                  <div className={`relative h-36 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                    <span className="text-6xl drop-shadow-lg">{project.icon}</span>
+                  <div className={`relative h-36 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
+                    <span className="text-6xl drop-shadow-lg transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+                      {project.icon}
+                    </span>
                     {isHighlight && (
                       <span
                         className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white shadow-md"

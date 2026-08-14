@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Award, Briefcase, Download, GraduationCap } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -12,15 +13,37 @@ const typeIcon = {
   certification: Award,
 }
 
+/** true, sobald der Viewport mindestens Tablet-Breite hat */
+function useWideScreen() {
+  const [wide, setWide] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const update = () => setWide(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  return wide
+}
+
 function TimelineItem({ entry, index, isLast }: { entry: TimelineEntry; index: number; isLast: boolean }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
   const Icon = typeIcon[entry.type]
+  const wide = useWideScreen()
+
+  // Auf schmalen Displays von unten einblenden - ein seitlicher Versatz wuerde
+  // dort ueber den Bildschirmrand hinausragen.
+  const initial = wide
+    ? { opacity: 0, x: index % 2 === 0 ? -30 : 30 }
+    : { opacity: 0, y: 24 }
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
+      initial={initial}
+      animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative flex gap-6 pb-10"
     >

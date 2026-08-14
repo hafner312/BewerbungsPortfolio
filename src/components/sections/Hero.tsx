@@ -2,31 +2,40 @@ import { FaGithub } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '../ui/Button'
+import { RotatingText } from '../ui/RotatingText'
+
+const rollen = [
+  'Full-Stack-Entwickler',
+  'React & TypeScript',
+  'C# und .NET',
+  'Java & Spring Boot',
+  'Docker & Kubernetes',
+]
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
+      className="grain min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #eef4f7 0%, #ffffff 45%, #e6f5f3 100%)' }}
     >
+      <div className="aurora" aria-hidden="true" />
+      <div className="aurora aurora-2" aria-hidden="true" />
       <div className="hero-grid absolute inset-0" aria-hidden="true" />
       <div
+        aria-hidden="true"
         className="blob-drift absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
         style={{ background: 'var(--color-accent)' }}
       />
       <div
+        aria-hidden="true"
         className="blob-drift-slow absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-10 blur-3xl"
         style={{ background: 'var(--color-accent-2)' }}
-      />
-      <div
-        className="blob-drift absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'var(--color-accent-cyan)' }}
       />
 
       <div className="relative z-10 max-w-3xl">
         <span
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border backdrop-blur-sm"
+          className="rise-in inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.6)',
             color: 'var(--color-accent-light)',
@@ -47,22 +56,39 @@ export function Hero() {
           Offen f&uuml;r neue Stellen
         </span>
 
-        <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 leading-tight pb-1">
+        <h1
+          className="shine-text rise-in text-5xl md:text-7xl font-bold mb-6 leading-tight pb-1"
+          style={{ animationDelay: '0.08s' }}
+        >
           Patrik Hafner
         </h1>
 
-        <p className="text-xl md:text-2xl mb-10 font-light" style={{ color: 'var(--color-text-secondary)' }}>
+        <p
+          className="rise-in text-xl md:text-2xl mb-4 font-light"
+          style={{ color: 'var(--color-text-secondary)', animationDelay: '0.16s' }}
+        >
           Applikationsentwickler EFZ (IPA-Wiederholung)
-          <span style={{ color: 'var(--color-accent)' }}> &middot; </span>
-          Full-Stack-Entwickler
         </p>
 
-        <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'var(--color-text-muted)', lineHeight: '1.8' }}>
+        <p
+          className="rise-in text-xl md:text-2xl mb-10 font-medium flex items-center justify-center gap-2 flex-wrap"
+          style={{ color: 'var(--color-text-secondary)', animationDelay: '0.24s' }}
+        >
+          <span className="font-light" style={{ color: 'var(--color-text-muted)' }}>
+            Schwerpunkt:
+          </span>
+          <RotatingText items={rollen} />
+        </p>
+
+        <p
+          className="rise-in text-lg mb-10 max-w-xl mx-auto"
+          style={{ color: 'var(--color-text-muted)', lineHeight: '1.8', animationDelay: '0.32s' }}
+        >
           Ich entwickle saubere, wartbare Software mit modernen Technologien,
           von der Datenbankschicht bis ins UI und vom Konzept bis zum Deployment.
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="rise-in flex flex-wrap gap-4 justify-center mb-12" style={{ animationDelay: '0.4s' }}>
           <Button as="a" href="#projects" variant="primary" size="lg">
             Meine Projekte
           </Button>

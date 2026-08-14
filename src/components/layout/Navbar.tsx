@@ -14,6 +14,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeId, setActiveId] = useState('')
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, restDelta: 0.001 })
 
@@ -21,6 +22,28 @@ export function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Scroll-Spy: hebt den Menuepunkt des gerade sichtbaren Abschnitts hervor
+  useEffect(() => {
+    const ids = [...navLinks.map((l) => l.href), '#contact'].map((h) => h.slice(1))
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const sichtbar = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (sichtbar) setActiveId(sichtbar.target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.25, 0.5, 1] }
+    )
+
+    sections.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -48,16 +71,28 @@ export function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-2 lg:gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="group relative px-1 py-2 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors whitespace-nowrap"
-            >
-              {link.label}
-              <span className="absolute left-1 right-1 -bottom-0.5 h-0.5 rounded-full bg-[var(--color-accent)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const aktiv = activeId === link.href.slice(1)
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={aktiv ? 'true' : undefined}
+                className={`group relative px-1 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
+                  aktiv
+                    ? 'text-[var(--color-accent)]'
+                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]'
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute left-1 right-1 -bottom-0.5 h-0.5 rounded-full bg-[var(--color-accent)] origin-left transition-transform duration-300 ${
+                    aktiv ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </a>
+            )
+          })}
           <a
             href="#contact"
             className="ml-2 lg:ml-4 px-5 py-2 rounded-full text-sm font-semibold text-white shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
