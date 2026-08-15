@@ -14,9 +14,12 @@ const rollen = [
 
 export function Hero() {
   return (
+    // pt-24/pb-24 halten den Inhalt frei von der fixen Navigationsleiste (4rem)
+    // und vom Scroll-Pfeil am unteren Rand - ohne sie rutscht das Abzeichen auf
+    // niedrigen Smartphone-Displays unter die Navigation.
     <section
       id="hero"
-      className="grain min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
+      className="grain min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-24 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #eef4f7 0%, #ffffff 45%, #e6f5f3 100%)' }}
     >
       <div className="aurora" aria-hidden="true" />
