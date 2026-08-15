@@ -10,6 +10,10 @@ export interface Project {
   highlight?: string
   /** Hinweis unter dem Live-Demo-Link, z.B. bei Gratis-Hosting mit Kaltstart-Verzoegerung */
   hostingNote?: string
+  /** Dateiname des Vorschaubilds in public/projekte (ohne Pfad), z.B. 'bookbuddy.webp' */
+  image?: string
+  /** Alternativtext des Vorschaubilds fuer Screenreader */
+  imageAlt?: string
 }
 
 export interface Skill {

@@ -15,6 +15,8 @@ export const projects: Project[] = [
     featured: true,
     icon: '📚',
     gradient: 'from-[#155e75] to-[#0d9488]',
+    image: 'bookbuddy.webp',
+    imageAlt: 'Bücherstapel mit Lesebrille und Kaffeetasse auf einem Schreibtisch',
   },
   {
     title: 'Einkaufsliste',
@@ -27,6 +29,8 @@ export const projects: Project[] = [
     featured: false,
     icon: '🛒',
     gradient: 'from-[#0d9488] to-[#0891b2]',
+    image: 'einkaufsliste.webp',
+    imageAlt: 'Einkaufstasche mit Lebensmitteln neben einem Notizblock mit Einkaufsliste',
   },
   {
     title: 'Pflanzenlexikon',
@@ -39,6 +43,8 @@ export const projects: Project[] = [
     featured: true,
     icon: '🌿',
     gradient: 'from-[#0d9488] to-[#0f766e]',
+    image: 'pflanzenlexikon.webp',
+    imageAlt: 'Laptop mit der Pflanzenlexikon-Oberfläche, umgeben von Zimmerpflanzen',
   },
   {
     title: '4 Gewinnt',
@@ -51,6 +57,8 @@ export const projects: Project[] = [
     featured: false,
     icon: '🎮',
     gradient: 'from-[#0e7490] to-[#0d9488]',
+    image: 'vier-gewinnt.webp',
+    imageAlt: 'Vier-Gewinnt-Spielbrett mit roten und gelben Steinen neben einem Controller',
   },
   {
     title: 'Contoso Pizza',
@@ -63,5 +71,7 @@ export const projects: Project[] = [
     featured: false,
     icon: '🍕',
     gradient: 'from-[#0e7490] to-[#155e75]',
+    image: 'contoso-pizza.webp',
+    imageAlt: 'Pizza Margherita neben einem Tablet mit der Speisekarte der Bestell-App',
   },
 ]

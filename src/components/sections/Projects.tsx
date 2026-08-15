@@ -32,10 +32,38 @@ export function Projects() {
                       : undefined
                   }
                 >
-                  <div className={`relative h-36 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
-                    <span className="text-6xl drop-shadow-lg transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-                      {project.icon}
-                    </span>
+                  <div className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+                    {project.image ? (
+                      <>
+                        <img
+                          src={`${import.meta.env.BASE_URL}projekte/${project.image}`}
+                          alt={project.imageAlt ?? ''}
+                          loading="lazy"
+                          decoding="async"
+                          width={880}
+                          height={495}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        {/* Verlauf nach unten: laesst das Bild in die Karte uebergehen
+                            und haelt das Emoji-Abzeichen gut lesbar */}
+                        <div
+                          className="absolute inset-0"
+                          aria-hidden="true"
+                          style={{
+                            background:
+                              'linear-gradient(180deg, rgba(15,23,42,0) 45%, rgba(15,23,42,0.42) 100%)',
+                          }}
+                        />
+                        <span className="absolute bottom-3 left-3 flex items-center justify-center w-11 h-11 rounded-xl text-2xl bg-white/85 backdrop-blur-sm shadow-md transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+                          {project.icon}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="absolute inset-0 flex items-center justify-center text-6xl drop-shadow-lg transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
+                        {project.icon}
+                      </span>
+                    )}
+
                     {isHighlight && (
                       <span
                         className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white shadow-md"
