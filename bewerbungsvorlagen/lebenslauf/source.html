@@ -104,6 +104,13 @@
     color: rgba(255,255,255,0.86);
   }
   .kopf-zeile span { white-space: nowrap; }
+  /* Verknuepfungen bleiben im PDF anklickbar - dezent unterstrichen,
+     damit man sie als Link erkennt */
+  .kopf-zeile a {
+    color: var(--akzent-hell);
+    text-decoration: underline;
+    text-underline-offset: 1.6px;
+  }
   .kopf-zeile b { color: #fff; font-weight: 600; }
 
   /* ---------------- Kurzprofil ---------------- */
@@ -258,6 +265,7 @@
     padding-top: 2.4mm;
   }
   .fuss .mono { font-family: 'JetBrains Mono', monospace; }
+  .fuss a { color: var(--akzent); text-decoration: underline; text-underline-offset: 1.6px; }
 </style>
 </head>
 <body>
@@ -271,10 +279,10 @@
       <div class="kopf-name">Patrik Hafner</div>
       <div class="kopf-rolle">Applikationsentwickler EFZ (IPA-Wiederholung)</div>
       <div class="kopf-zeile">
-        <span><b>E-Mail</b> hafner312@gmail.com</span>
+        <span><b>E-Mail</b> <a href="mailto:hafner312@gmail.com">hafner312@gmail.com</a></span>
         <span><b>Telefon</b> +41 79 501 26 53</span>
         <span><b>Ort</b> 6460 Altdorf UR</span>
-        <span><b>Portfolio</b> hafner312.github.io/BewerbungsPortfolio</span>
+        <span><b>Portfolio</b> <a href="https://hafner312.github.io/BewerbungsPortfolio/">hafner312.github.io/BewerbungsPortfolio</a></span>
       </div>
     </div>
   </header>
@@ -443,7 +451,7 @@
 
   <div class="fuss">
     <span>Patrik Hafner · Lebenslauf</span>
-    <span class="mono">hafner312.github.io/BewerbungsPortfolio</span>
+    <span class="mono"><a href="https://hafner312.github.io/BewerbungsPortfolio/">hafner312.github.io/BewerbungsPortfolio</a></span>
   </div>
 
 </div>
