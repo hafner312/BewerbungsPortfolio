@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BookMarked, ChevronDown, ExternalLink, GraduationCap, Layers } from 'lucide-react'
+import { ChevronDown, ExternalLink } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -10,7 +10,8 @@ const collections = [
       'Persönliche Microsoft Learn Sammlung mit ausgewählten Lernmodulen rund um Softwareentwicklung, Cloud und moderne Technologien.',
     url: 'https://learn.microsoft.com/de-ch/collections/ypg4aetxn7xmjk?&sharingId=2A7ECE64A14FD4F7',
     color: 'from-[#0d9488] to-[#1e293b]',
-    Icon: BookMarked,
+    image: 'sammlung-persoenlich.webp',
+    imageAlt: 'Aufgeschlagenes Buch mit Doktorhut als Sinnbild für die persönliche Lernsammlung',
   },
   {
     title: 'Microsoft Learn Sammlung',
@@ -18,7 +19,8 @@ const collections = [
       'Weitere Lernpfade und Module zur kontinuierlichen Weiterbildung im IT-Bereich.',
     url: 'https://learn.microsoft.com/de-ch/collections/pez5hzt0qrp0m5?&sharingId=2A7ECE64A14FD4F7',
     color: 'from-[#0891b2] to-[#0d9488]',
-    Icon: Layers,
+    image: 'microsoft-learn.webp',
+    imageAlt: 'Microsoft-Logo, umgeben von Symbolen für Cloud, Code und Ausbildung',
   },
 ]
 
@@ -109,9 +111,16 @@ export function Learning() {
                 rel="noopener noreferrer"
                 className="card group block h-full rounded-2xl overflow-hidden"
               >
-                <div className={`h-28 bg-gradient-to-br ${col.color} flex items-center justify-center gap-4`}>
-                  <col.Icon size={38} className="text-white" />
-                  <GraduationCap size={32} className="text-white/60" />
+                <div className={`relative h-32 bg-gradient-to-br ${col.color} overflow-hidden`}>
+                  <img
+                    src={`${import.meta.env.BASE_URL}weiterbildung/${col.image}`}
+                    alt={col.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    width={760}
+                    height={250}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
                 </div>
 
                 <div className="p-6">
