@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
 const quickLinks = [
@@ -127,13 +127,8 @@ export function Footer() {
               Datenschutz
             </a>
           </p>
-          <a
-            href="#hero"
-            className="group inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
-          >
-            Nach oben
-            <ArrowUp size={15} className="transition-transform group-hover:-translate-y-0.5" />
-          </a>
+          {/* Kein "Nach oben" mehr an dieser Stelle: der runde Knopf unten rechts
+              (BackToTop) uebernimmt das und lag hier sonst genau darueber. */}
         </div>
       </div>
     </footer>
