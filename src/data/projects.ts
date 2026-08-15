@@ -5,6 +5,23 @@ const hostingNote =
 
 export const projects: Project[] = [
   {
+    // Bewusst an erster Stelle: Diese Seite ist selbst ein Arbeitsbeispiel.
+    // Kein liveUrl - man befindet sich ja bereits darauf.
+    title: 'Portfolio-Website',
+    description:
+      'Diese Website. Single-Page-Anwendung mit React 19, TypeScript und Vite, gestaltet mit Tailwind CSS. Drei separate Seiten-Einstiegspunkte, Kontaktformular direkt aus dem Browser und eine Build-Pipeline, die bei jedem Push über GitHub Actions automatisch auf GitHub Pages veröffentlicht.',
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Actions'],
+    githubUrl: 'https://github.com/hafner312/BewerbungsPortfolio',
+    featured: true,
+    highlight: 'Diese Website',
+    icon: '🌐',
+    gradient: 'from-[#0f766e] to-[#1e3a5c]',
+    image: 'portfolio-website.webp',
+    imageAlt: 'Startseite dieser Portfolio-Website mit Namenszug und Code-Karte',
+    hostingNote:
+      'Du siehst sie gerade: Der Quellcode dieser Seite liegt offen auf GitHub – vom ersten Entwurf bis zum automatischen Deployment.',
+  },
+  {
     title: 'BookBuddy',
     description:
       'Fullstack-Anwendung zur Verwaltung von Büchern mit React/Vite-Frontend und Spring-Boot-Backend. Modulare Struktur für schnelles Prototyping und produktionsnahe Entwicklung.',

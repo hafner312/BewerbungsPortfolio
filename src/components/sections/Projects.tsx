@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Github, Info } from 'lucide-react'
+import { ExternalLink, Github, Info, Sparkles } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
@@ -68,7 +68,7 @@ export function Projects() {
                         className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white shadow-md"
                         style={{ background: 'var(--color-accent-2)' }}
                       >
-                        <Award size={13} />
+                        <Sparkles size={13} />
                         {project.highlight}
                       </span>
                     )}
