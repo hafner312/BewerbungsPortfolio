@@ -25,16 +25,15 @@ const farbe: Record<string, string> = {
 export function CodeCard() {
   return (
     <div
-      className="relative w-full max-w-md rounded-2xl overflow-hidden transition-transform duration-500 ease-out hover:rotate-0 hover:-translate-y-1"
+      // Die leichte Neigung erst ab Desktop - auf schmalen Displays wirkt sie
+      // gedraengt und kostet unnoetig Breite.
+      className="relative w-full max-w-md rounded-2xl overflow-hidden transition-transform duration-500 ease-out lg:-rotate-[1.6deg] hover:rotate-0 hover:-translate-y-1"
       style={{
         background: 'rgba(6, 20, 31, 0.82)',
         backdropFilter: 'blur(6px)',
         border: '1px solid rgba(125, 211, 252, 0.28)',
         boxShadow:
           '0 0 0 1px rgba(255,255,255,0.04), 0 28px 70px rgba(0, 0, 0, 0.55), 0 0 60px rgba(45, 212, 191, 0.18)',
-        // leichte Neigung: nimmt dem Hero die Strenge, richtet sich beim
-        // Ueberfahren wieder gerade aus
-        transform: 'rotate(-1.6deg)',
       }}
     >
       {/* Fensterleiste */}
@@ -50,8 +49,11 @@ export function CodeCard() {
         </span>
       </div>
 
+      {/* Schrift waechst mit der Breite, damit die laengste Zeile
+          ("rolle: 'Applikationsentwickler EFZ',") auch auf schmalen
+          Displays ohne seitliches Scrollen hineinpasst */}
       <pre
-        className="mono px-5 py-5 text-[13px] leading-relaxed overflow-x-auto"
+        className="mono px-4 py-4 text-[10.5px] sm:px-5 sm:py-5 sm:text-[12px] lg:text-[13px] leading-relaxed overflow-x-auto"
         style={{ color: '#94a3b8', margin: 0 }}
       >
         <code>

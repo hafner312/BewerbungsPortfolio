@@ -162,8 +162,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* ---------------- rechte Spalte: Code-Karte ---------------- */}
-        <div className="rise-in hidden lg:flex justify-end" style={{ animationDelay: '0.3s' }}>
+        {/* ---------------- rechte Spalte: Code-Karte ----------------
+            Auch auf Smartphone und Tablet sichtbar; dort steht sie unter
+            dem Text und ist mittig gesetzt. */}
+        <div
+          className="rise-in flex justify-center lg:justify-end"
+          style={{ animationDelay: '0.3s' }}
+        >
           <CodeCard />
         </div>
       </div>
