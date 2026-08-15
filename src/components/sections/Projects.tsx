@@ -44,19 +44,16 @@ export function Projects() {
                           height={495}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        {/* Verlauf nach unten: laesst das Bild in die Karte uebergehen
-                            und haelt das Emoji-Abzeichen gut lesbar */}
+                        {/* Zarter Verlauf am unteren Rand: laesst das Bild weich in
+                            die Karte uebergehen, statt hart abzuschneiden */}
                         <div
                           className="absolute inset-0"
                           aria-hidden="true"
                           style={{
                             background:
-                              'linear-gradient(180deg, rgba(15,23,42,0) 45%, rgba(15,23,42,0.42) 100%)',
+                              'linear-gradient(180deg, rgba(15,23,42,0) 72%, rgba(15,23,42,0.16) 100%)',
                           }}
                         />
-                        <span className="absolute bottom-3 left-3 flex items-center justify-center w-11 h-11 rounded-xl text-2xl bg-white/85 backdrop-blur-sm shadow-md transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
-                          {project.icon}
-                        </span>
                       </>
                     ) : (
                       <span className="absolute inset-0 flex items-center justify-center text-6xl drop-shadow-lg transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6">
