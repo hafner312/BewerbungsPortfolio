@@ -1,17 +1,40 @@
-# Regenerates public/bewerbungsunterlagen/lebenslauf.pdf from bewerbungsvorlagen/lebenslauf/source.html. Run after editing source.html.
+# Erzeugt aus den Lebenslauf-Vorlagen die PDFs.
+#
+#   source.html          -> public/bewerbungsunterlagen/lebenslauf.pdf
+#                           OEFFENTLICHE Fassung ohne Kontaktdaten der
+#                           Referenzpersonen (steht auf der Website zum Download).
+#
+#   source-versand.html  -> bewerbungsvorlagen/lebenslauf/lebenslauf-versand.pdf
+#                           VOLLE Fassung mit Referenzkontakten, nur fuer den
+#                           direkten Versand. Beide Dateien sind gitignoriert
+#                           und duerfen nicht veroeffentlicht werden.
+#
+# Nach jeder Aenderung an einer source-Datei ausfuehren.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-$source = Join-Path $PSScriptRoot "source.html"
-$siteOutput = Join-Path $root "public\bewerbungsunterlagen\lebenslauf.pdf"
-$tmp = Join-Path $PSScriptRoot "output.pdf"
 
-$uri = "file:///$($source -replace '\\','/')"
-Start-Process -FilePath $edge -ArgumentList @(
-    "--headless", "--disable-gpu", "--no-pdf-header-footer",
-    "--print-to-pdf=$tmp", "--print-to-pdf-no-header", $uri
-) -Wait -NoNewWindow
+function Build-Pdf($quelle, $ziel) {
+    $tmp = Join-Path $PSScriptRoot "output.pdf"
+    $uri = "file:///$($quelle -replace '\\','/')"
+    Start-Process -FilePath $edge -ArgumentList @(
+        "--headless", "--disable-gpu", "--no-pdf-header-footer",
+        "--print-to-pdf=$tmp", "--print-to-pdf-no-header", $uri
+    ) -Wait -NoNewWindow
 
-if (-not (Test-Path $tmp)) { throw "PDF wurde nicht erzeugt: $tmp" }
-Move-Item -Force $tmp $siteOutput
-Write-Output "lebenslauf.pdf aktualisiert: $siteOutput"
+    if (-not (Test-Path $tmp)) { throw "PDF wurde nicht erzeugt: $tmp" }
+    Move-Item -Force $tmp $ziel
+    Write-Output "erzeugt: $ziel"
+}
+
+# Oeffentliche Fassung
+Build-Pdf (Join-Path $PSScriptRoot "source.html") `
+          (Join-Path $root "public\bewerbungsunterlagen\lebenslauf.pdf")
+
+# Versandfassung, falls lokal vorhanden
+$versandQuelle = Join-Path $PSScriptRoot "source-versand.html"
+if (Test-Path $versandQuelle) {
+    Build-Pdf $versandQuelle (Join-Path $PSScriptRoot "lebenslauf-versand.pdf")
+} else {
+    Write-Output "Hinweis: source-versand.html fehlt - nur die oeffentliche Fassung erzeugt."
+}

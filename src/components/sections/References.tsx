@@ -3,49 +3,17 @@ import { ChevronDown, FileText } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 
+/**
+ * Oeffentlich gezeigt wird nur das eidgenoessische Faehigkeitszeugnis: Es
+ * stammt von einer Pruefungsbehoerde und enthaelt keine Unterschriften und
+ * Kontaktdaten einzelner Privatpersonen.
+ *
+ * Die Arbeitszeugnisse frueherer Arbeitgeber liegen bewusst NICHT im
+ * oeffentlichen Ordner (siehe unterlagen-privat/, gitignoriert) - sie tragen
+ * Namen und Unterschriften der Unterzeichnenden. Sie werden der Bewerbung
+ * beigelegt statt weltweit abrufbar gemacht.
+ */
 const documents = [
-  {
-    title: 'Arbeitsbestätigung Persigo AG',
-    caption: 'Temporäreinsatz als Metallbauer, 11.09.2023 – 19.10.2023.',
-    image: '/BewerbungsPortfolio/zeugnisse/persigo-arbeitsbestaetigung.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/persigo-arbeitsbestaetigung.pdf',
-  },
-  {
-    title: 'Arbeitsbestätigung Stellenpartner Zug AG',
-    caption: 'Temporäreinsatz als Metallbauer, 12.12.2022 – 19.01.2023.',
-    image: '/BewerbungsPortfolio/zeugnisse/stellenpartner-zug-arbeitsbestaetigung.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/stellenpartner-zug-arbeitsbestaetigung.pdf',
-  },
-  {
-    title: 'Arbeitszeugnis Arthur Weber AG',
-    caption: 'Logistiker im Lager Schattdorf, 11.01.2021 – 31.12.2021.',
-    image: '/BewerbungsPortfolio/zeugnisse/arthur-weber-arbeitszeugnis.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/arthur-weber-arbeitszeugnis.pdf',
-  },
-  {
-    title: 'Arbeitsbestätigung WALKER Stahl- und Metallbau AG',
-    caption: 'Metallbauer EFZ, 23.04.2018 – 30.06.2018.',
-    image: '/BewerbungsPortfolio/zeugnisse/walker-arbeitsbestaetigung.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/walker-arbeitsbestaetigung.pdf',
-  },
-  {
-    title: 'Arbeitszeugnis Alters- und Pflegeheim Rüttigarten',
-    caption: 'Zivildiensteinsatz in der Pflege, 15.05.2017 – 28.07.2017.',
-    image: '/BewerbungsPortfolio/zeugnisse/ruettigarten-arbeitszeugnis.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/ruettigarten-arbeitszeugnis.pdf',
-  },
-  {
-    title: 'Arbeitszeugnis Emil Gisler AG (GIPO)',
-    caption: 'Komponentenschlosserei im Maschinenbau, 03.10.2016 – 31.03.2017.',
-    image: '/BewerbungsPortfolio/zeugnisse/emil-gisler-arbeitszeugnis.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/emil-gisler-arbeitszeugnis.pdf',
-  },
-  {
-    title: 'Ausbildungszeugnis Louis Zurfluh AG',
-    caption: '4-jährige Ausbildung zum Metallbauer EFZ, 01.08.2011 – 31.07.2015, mit Erfolg beendet.',
-    image: '/BewerbungsPortfolio/zeugnisse/louis-zurfluh-ag-ausbildungszeugnis.jpg',
-    pdf: '/BewerbungsPortfolio/zeugnisse/louis-zurfluh-ag-ausbildungszeugnis.pdf',
-  },
   {
     title: 'Fähigkeitszeugnis Metallbauer EFZ',
     caption: 'Eidgenössisches Fähigkeitszeugnis, Amt für Berufsbildung und Mittelschulen Uri, 23. Juni 2015.',
@@ -62,7 +30,7 @@ export function References() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Zeugnisse"
-          subtitle="Arbeitszeugnisse und Qualifikationsnachweise"
+          subtitle="Qualifikationsnachweis – Arbeitszeugnisse sende ich gerne auf Anfrage zu"
         />
 
         <div className="flex justify-center mb-10">
@@ -82,12 +50,20 @@ export function References() {
               className="transition-transform duration-300"
               style={{ transform: expanded ? 'rotate(180deg)' : 'none' }}
             />
-            {expanded ? 'Zeugnisse ausblenden' : `${documents.length} Zeugnisse anzeigen`}
+            {expanded ? 'Zeugnis ausblenden' : 'Fähigkeitszeugnis anzeigen'}
           </button>
         </div>
 
+        <p
+          className="text-center text-sm max-w-xl mx-auto mb-10"
+          style={{ color: 'var(--color-text-muted)' }}
+        >
+          Meine Arbeitszeugnisse früherer Arbeitgeber lege ich jeder Bewerbung bei
+          oder sende sie auf Anfrage gerne zu.
+        </p>
+
         {expanded && (
-          <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+          <div className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
             {documents.map((doc, i) => (
               <AnimatedSection key={doc.title} delay={(i % 4) * 0.1}>
                 <figure className="card h-full overflow-hidden rounded-2xl">

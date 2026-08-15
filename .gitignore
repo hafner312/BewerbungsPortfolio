@@ -22,6 +22,15 @@ dist-ssr/
 /bewerbungen/
 /Arbeitsbemühungen/
 
+# Arbeitszeugnisse enthalten Namen und Unterschriften der Unterzeichnenden.
+# Sie gehoeren in die Bewerbung, nicht auf die oeffentliche Website.
+/unterlagen-privat/
+
+# Lebenslauf-Fassung mit Kontaktdaten der Referenzpersonen - nur fuer den
+# Versand, nie veroeffentlichen.
+/bewerbungsvorlagen/lebenslauf/source-versand.html
+/bewerbungsvorlagen/lebenslauf/lebenslauf-versand.pdf
+
 # Editor
 .vscode/*
 !.vscode/extensions.json
