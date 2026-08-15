@@ -39,26 +39,30 @@ export function About() {
 
         <div className="grid lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] gap-12 lg:gap-16 items-start">
           {/* ---------------- Portrait ---------------- */}
-          <figure className="relative mx-auto w-fit">
-            {/* Versetzter Rahmen statt farbigem Block - ruhiger und gerade */}
-            <span
-              aria-hidden="true"
-              className="absolute -z-10 rounded-[20px]"
-              style={{
-                inset: '18px -18px -18px 18px',
-                border: '1px solid rgba(120, 100, 70, 0.35)',
-              }}
-            />
-            <img
-              src="/BewerbungsPortfolio/photo.jpeg"
-              alt="Patrik Hafner"
-              width={300}
-              height={375}
-              loading="lazy"
-              className="relative block w-60 md:w-[300px] aspect-[4/5] object-cover object-top rounded-[18px]"
-              style={{ boxShadow: '0 14px 36px rgba(60, 45, 25, 0.16)' }}
-            />
-            <figcaption className="mt-5 text-sm" style={{ color: '#8a7a63' }}>
+          {/* Rahmen und Bild liegen in einem eigenen Wrapper - die Unterschrift
+              darf breiter sein als das Foto, ohne den Rahmen mitzuziehen. */}
+          <figure className="mx-auto w-full max-w-[300px]">
+            <div className="relative">
+              {/* Versetzter Rahmen statt farbigem Block - ruhig und gerade */}
+              <span
+                aria-hidden="true"
+                className="absolute -z-10 rounded-[20px]"
+                style={{
+                  inset: '18px -18px -18px 18px',
+                  border: '1px solid rgba(120, 100, 70, 0.35)',
+                }}
+              />
+              <img
+                src="/BewerbungsPortfolio/photo.jpeg"
+                alt="Patrik Hafner"
+                width={300}
+                height={375}
+                loading="lazy"
+                className="relative block w-full aspect-[4/5] object-cover object-top rounded-[18px]"
+                style={{ boxShadow: '0 14px 36px rgba(60, 45, 25, 0.16)' }}
+              />
+            </div>
+            <figcaption className="mt-5 text-sm text-balance" style={{ color: '#8a7a63' }}>
               <span className="mono">Patrik Hafner</span> &middot; Altdorf, Uri
             </figcaption>
           </figure>
@@ -97,8 +101,10 @@ export function About() {
 
         {/* Eckdaten ueber die volle Breite - in der schmalen Spalte wurde
             "Applikationsentwickler" mitten im Wort umbrochen. */}
+        {/* Auf schmalen Displays einspaltig: zweispaltig war die Spalte zu
+            schmal fuer "Applikationsentwickler EFZ" und der Text lief ueber. */}
         <dl
-          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 pt-7"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 pt-7"
           style={{ borderTop: '1px solid rgba(120, 100, 70, 0.28)' }}
         >
           {fakten.map((f) => (
@@ -111,7 +117,7 @@ export function About() {
               </dt>
               <dd
                 className="display font-bold text-lg leading-tight"
-                style={{ color: '#2b2419' }}
+                style={{ color: '#2b2419', hyphens: 'auto', overflowWrap: 'anywhere' }}
               >
                 {f.value}
               </dd>
