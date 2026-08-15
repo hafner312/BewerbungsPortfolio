@@ -27,9 +27,11 @@ export function CodeCard() {
     <div
       className="relative w-full max-w-md rounded-2xl overflow-hidden transition-transform duration-500 ease-out hover:rotate-0 hover:-translate-y-1"
       style={{
-        background: '#0f1c2e',
-        border: '1px solid rgba(94, 234, 212, 0.18)',
-        boxShadow: '0 24px 60px rgba(13, 148, 136, 0.28), 0 4px 14px rgba(15, 23, 42, 0.2)',
+        background: 'rgba(6, 20, 31, 0.82)',
+        backdropFilter: 'blur(6px)',
+        border: '1px solid rgba(125, 211, 252, 0.28)',
+        boxShadow:
+          '0 0 0 1px rgba(255,255,255,0.04), 0 28px 70px rgba(0, 0, 0, 0.55), 0 0 60px rgba(45, 212, 191, 0.18)',
         // leichte Neigung: nimmt dem Hero die Strenge, richtet sich beim
         // Ueberfahren wieder gerade aus
         transform: 'rotate(-1.6deg)',

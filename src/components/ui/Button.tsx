@@ -1,7 +1,8 @@
 import type { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost'
+  /** 'outlineLight' ist fuer dunkle Hintergruende gedacht */
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outlineLight'
   size?: 'sm' | 'md' | 'lg'
   as?: 'button' | 'a'
   href?: string
@@ -32,6 +33,8 @@ export function Button({
       'border border-[var(--color-accent)] bg-white/60 backdrop-blur-sm text-[var(--color-accent-light)] hover:bg-[var(--color-accent-glow)] hover:-translate-y-0.5 shadow-[0_2px_10px_rgba(13,148,136,0.12)]',
     ghost:
       'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-elevated)]',
+    outlineLight:
+      'border border-white/35 bg-white/5 backdrop-blur-sm text-white hover:bg-white/15 hover:border-white/60 hover:-translate-y-0.5',
   }
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`

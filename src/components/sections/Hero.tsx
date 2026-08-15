@@ -22,11 +22,19 @@ export function Hero() {
     <section
       id="hero"
       className="grain min-h-screen flex items-center px-6 pt-28 pb-20 relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #eef4f7 0%, #ffffff 45%, #e6f5f3 100%)' }}
+      style={{ background: 'linear-gradient(150deg, #04201f 0%, #06282f 45%, #041a24 100%)' }}
     >
       <div className="aurora" aria-hidden="true" />
       <div className="aurora aurora-2" aria-hidden="true" />
-      <div className="hero-grid absolute inset-0" aria-hidden="true" />
+      {/* Abdunklung ueber dem Farbnebel: haelt den Text jederzeit gut lesbar */}
+      <div
+        className="absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            'radial-gradient(70% 60% at 30% 45%, rgba(3, 20, 22, 0.72) 0%, rgba(3, 20, 22, 0.35) 55%, transparent 100%)',
+        }}
+      />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-10 items-center">
         {/* ---------------- linke Spalte: Inhalt ---------------- */}
@@ -34,10 +42,10 @@ export function Hero() {
           <span
             className="rise-in inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border backdrop-blur-sm"
             style={{
-              background: 'rgba(255, 255, 255, 0.6)',
-              color: 'var(--color-accent-light)',
-              borderColor: 'rgba(13, 148, 136, 0.3)',
-              boxShadow: '0 2px 12px rgba(13, 148, 136, 0.12)',
+              background: 'rgba(255, 255, 255, 0.1)',
+              color: '#a7f3e4',
+              borderColor: 'rgba(167, 243, 228, 0.35)',
+              boxShadow: '0 2px 16px rgba(20, 184, 166, 0.25)',
             }}
           >
             <span className="relative flex h-2.5 w-2.5">
@@ -54,7 +62,7 @@ export function Hero() {
           </span>
 
           <h1
-            className="shine-text rise-in text-5xl md:text-6xl xl:text-7xl font-bold mb-4 leading-[1.05] pb-1"
+            className="shine-text-light rise-in text-5xl md:text-6xl xl:text-7xl font-bold mb-4 leading-[1.05] pb-1"
             style={{ animationDelay: '0.08s' }}
           >
             Patrik Hafner
@@ -62,16 +70,16 @@ export function Hero() {
 
           <p
             className="rise-in text-lg md:text-xl mb-2"
-            style={{ color: 'var(--color-text-secondary)', animationDelay: '0.16s' }}
+            style={{ color: 'rgba(255,255,255,0.9)', animationDelay: '0.16s' }}
           >
             Applikationsentwickler EFZ (IPA-Wiederholung)
           </p>
 
           <p
             className="rise-in text-lg md:text-xl mb-6 font-medium flex items-center justify-center lg:justify-start gap-2 flex-wrap"
-            style={{ color: 'var(--color-text-secondary)', animationDelay: '0.22s' }}
+            style={{ color: 'rgba(255,255,255,0.9)', animationDelay: '0.22s' }}
           >
-            <span className="font-light" style={{ color: 'var(--color-text-muted)' }}>
+            <span className="font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Schwerpunkt:
             </span>
             <RotatingText items={rollen} />
@@ -79,7 +87,7 @@ export function Hero() {
 
           <p
             className="rise-in text-base md:text-lg mb-7 max-w-xl mx-auto lg:mx-0"
-            style={{ color: 'var(--color-text-muted)', lineHeight: '1.75', animationDelay: '0.3s' }}
+            style={{ color: 'rgba(255,255,255,0.72)', lineHeight: '1.75', animationDelay: '0.3s' }}
           >
             Ich entwickle saubere, wartbare Software mit modernen Technologien,
             von der Datenbankschicht bis ins UI und vom Konzept bis zum Deployment.
@@ -95,9 +103,9 @@ export function Hero() {
                 key={t}
                 className="mono px-3 py-1 rounded-lg text-xs font-medium"
                 style={{
-                  background: 'rgba(255,255,255,0.7)',
-                  color: 'var(--color-text-secondary)',
-                  border: '1px solid var(--color-border)',
+                  background: 'rgba(255,255,255,0.08)',
+                  color: 'rgba(255,255,255,0.82)',
+                  border: '1px solid rgba(255,255,255,0.16)',
                 }}
               >
                 {t}
@@ -115,7 +123,7 @@ export function Hero() {
             <Button
               as="a"
               href="/BewerbungsPortfolio/bewerbungsunterlagen/lebenslauf.pdf?v=20260716"
-              variant="secondary"
+              variant="outlineLight"
               size="lg"
             >
               Lebenslauf als PDF
@@ -130,23 +138,23 @@ export function Hero() {
               href="https://github.com/hafner312"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-[var(--color-accent)]"
-              style={{ color: 'var(--color-text-muted)' }}
+              className="transition-colors hover:text-white"
+              style={{ color: 'rgba(255,255,255,0.7)' }}
               aria-label="GitHub"
             >
               <FaGithub size={22} />
             </a>
             <a
               href="mailto:hafner312@gmail.com"
-              className="transition-colors hover:text-[var(--color-accent)]"
-              style={{ color: 'var(--color-text-muted)' }}
+              className="transition-colors hover:text-white"
+              style={{ color: 'rgba(255,255,255,0.7)' }}
               aria-label="E-Mail senden"
             >
               <MdEmail size={24} />
             </a>
             <span
               className="inline-flex items-center gap-1.5 text-sm"
-              style={{ color: 'var(--color-text-muted)' }}
+              style={{ color: 'rgba(255,255,255,0.7)' }}
             >
               <MapPin size={15} />
               Altdorf, Uri
@@ -162,8 +170,8 @@ export function Hero() {
 
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 transition-colors animate-bounce"
-        style={{ color: 'var(--color-text-muted)' }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 transition-colors animate-bounce z-10"
+        style={{ color: 'rgba(255,255,255,0.65)' }}
         aria-label="Nach unten scrollen"
       >
         <ChevronDown size={28} />
