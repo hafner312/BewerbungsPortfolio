@@ -33,13 +33,15 @@ export function RotatingText({ items, interval = 2600, className = '' }: Rotatin
         {items.reduce((a, b) => (b.length > a.length ? b : a), '')}
       </span>
 
-      <AnimatePresence mode="wait">
+      {/* Kein mode="wait": beide Eintraege liegen in derselben Rasterzelle und
+          blenden ineinander ueber - sonst entstuende kurz eine leere Luecke. */}
+      <AnimatePresence>
         <motion.span
           key={items[index]}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
           className="col-start-1 row-start-1 whitespace-nowrap text-left"
           style={{ color: 'var(--color-accent)' }}
         >
