@@ -23,7 +23,7 @@ export function Projects() {
               <AnimatedSection key={project.title} delay={i * 0.08}>
                 <div
                   onMouseMove={onMove}
-                  className={`card spotlight group relative h-full flex flex-col rounded-2xl overflow-hidden ${
+                  className={`card card-project spotlight group relative h-full flex flex-col rounded-2xl overflow-hidden ${
                     isHighlight ? 'pulse-ring' : ''
                   }`}
                   style={
@@ -70,10 +70,33 @@ export function Projects() {
                         {project.highlight}
                       </span>
                     )}
+
+                    {/* Abdunklung ist rein visuell, geklickt wird nur der
+                        Knopf darin */}
+                    {project.liveUrl && (
+                      <div
+                        className="absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+                        style={{ background: 'rgba(8, 40, 38, 0.55)' }}
+                      >
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg transition-transform duration-200 hover:scale-105"
+                          style={{ background: 'var(--color-accent)' }}
+                        >
+                          <ExternalLink size={15} />
+                          Live-Demo öffnen
+                        </a>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex flex-col flex-1 p-6 gap-4">
-                    <h3 className="font-bold text-lg" style={{ color: 'var(--color-text-primary)' }}>
+                  <div className="flex flex-col flex-1 p-6 gap-3.5">
+                    <h3
+                      className="display font-bold text-xl leading-snug"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
                       {project.title}
                     </h3>
                     <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--color-text-secondary)' }}>
@@ -86,33 +109,26 @@ export function Projects() {
                       ))}
                     </div>
 
-                    <div className="flex gap-3 pt-2" style={{ borderTop: '1px solid var(--color-border)' }}>
+                    {/* Die Demo wird ueber das Bild geoeffnet, hier steht darum
+                        nur noch der Quellcode - im dunklen Gruen der Navigation,
+                        damit er sich klar vom Tuerkis der Demo abhebt */}
+                    <div
+                      className="flex flex-wrap items-center gap-3 pt-4 mt-1"
+                      style={{ borderTop: '1px solid rgba(13,148,136,0.18)' }}
+                    >
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-sm transition-colors"
-                          style={{ color: 'var(--color-text-muted)' }}
-                          onMouseOver={e => (e.currentTarget.style.color = 'var(--color-accent)')}
-                          onMouseOut={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
+                          style={{
+                            background: 'var(--color-frame)',
+                            boxShadow: '0 3px 12px rgba(12,43,41,0.28)',
+                          }}
                         >
-                          <Github size={16} />
+                          <Github size={15} />
                           Code ansehen
-                        </a>
-                      )}
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-sm transition-colors"
-                          style={{ color: 'var(--color-text-muted)' }}
-                          onMouseOver={e => (e.currentTarget.style.color = 'var(--color-accent)')}
-                          onMouseOut={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
-                        >
-                          <ExternalLink size={16} />
-                          Live-Demo
                         </a>
                       )}
                     </div>
