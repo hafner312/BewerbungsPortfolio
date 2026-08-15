@@ -2,9 +2,13 @@ import { Award, ExternalLink, Github, Info } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
+import { useHoverBeimScrollen } from '../ui/useHoverBeimScrollen'
 import { projects } from '../../data/projects'
 
 export function Projects() {
+  // sorgt dafuer, dass die Demo-Einblendung auch beim Scrollen erscheint
+  const beimScrollen = useHoverBeimScrollen('data-projekt')
+
   return (
     <section id="projects" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
       <div className="max-w-6xl mx-auto">
@@ -16,9 +20,11 @@ export function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => {
             const isHighlight = !!project.highlight
+            const ueberfahren = beimScrollen === project.title
             return (
               <AnimatedSection key={project.title} delay={i * 0.08}>
                 <div
+                  data-projekt={project.title}
                   className={`card card-project group relative h-full flex flex-col rounded-2xl overflow-hidden ${
                     isHighlight ? 'pulse-ring' : ''
                   }`}
@@ -71,7 +77,9 @@ export function Projects() {
                         Knopf darin */}
                     {project.liveUrl && (
                       <div
-                        className="absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+                        className={`demo-einblendung absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100 ${
+                          ueberfahren ? 'opacity-100' : 'opacity-0'
+                        }`}
                         style={{ background: 'rgba(8, 40, 38, 0.55)' }}
                       >
                         <a
