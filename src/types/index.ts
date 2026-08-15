@@ -8,6 +8,8 @@ export interface Project {
   icon: string
   gradient: string
   highlight?: string
+  /** Neutrale Kennzeichnung, z.B. 'Teamprojekt (Schule)' - ohne die Hervorhebung von highlight */
+  label?: string
   /** Hinweis unter dem Live-Demo-Link, z.B. bei Gratis-Hosting mit Kaltstart-Verzoegerung */
   hostingNote?: string
   /** Dateiname des Vorschaubilds in public/projekte (ohne Pfad), z.B. 'bookbuddy.webp' */

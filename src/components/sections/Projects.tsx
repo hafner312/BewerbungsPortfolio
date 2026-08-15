@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Info, Sparkles } from 'lucide-react'
+import { ExternalLink, Github, Info, Sparkles, Users } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
@@ -70,6 +70,19 @@ export function Projects() {
                       >
                         <Sparkles size={13} />
                         {project.highlight}
+                      </span>
+                    )}
+
+                    {/* Sachliche Kennzeichnung (z. B. Teamprojekt) - bewusst
+                        zurueckhaltender als das Hervorhebungs-Abzeichen und
+                        links, damit sich beide nie ueberdecken */}
+                    {project.label && (
+                      <span
+                        className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-white shadow-md backdrop-blur-sm"
+                        style={{ background: 'rgba(12, 43, 41, 0.85)' }}
+                      >
+                        <Users size={13} />
+                        {project.label}
                       </span>
                     )}
 

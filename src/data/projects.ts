@@ -22,6 +22,21 @@ export const projects: Project[] = [
       'Du siehst sie gerade: Der Quellcode dieser Seite liegt offen auf GitHub – vom ersten Entwurf bis zum automatischen Deployment.',
   },
   {
+    title: 'Pflanzenlexikon',
+    description:
+      'Web-App zur Verwaltung von Pflanzendaten mit Java Spring Boot, MongoDB und einem eigenen Frontend zum Durchsuchen, Filtern und Bearbeiten des Pflanzenbestands. Die REST-API lässt sich zusätzlich über die interaktive Swagger-Oberfläche direkt ausprobieren.',
+    tags: ['Java', 'Spring Boot', 'MongoDB', 'REST API'],
+    githubUrl: 'https://github.com/hafner312/Projektarbeit-Pflanzenlexikon',
+    liveUrl: 'https://projektarbeit-pflanzenlexikon.onrender.com/',
+    hostingNote,
+    featured: true,
+    label: 'Teamprojekt · Schule',
+    icon: '🌿',
+    gradient: 'from-[#0d9488] to-[#0f766e]',
+    image: 'pflanzenlexikon.webp',
+    imageAlt: 'Laptop mit der Pflanzenlexikon-Oberfläche, umgeben von Zimmerpflanzen',
+  },
+  {
     title: 'BookBuddy',
     description:
       'Fullstack-Anwendung zur Verwaltung von Büchern mit React/Vite-Frontend und Spring-Boot-Backend. Modulare Struktur für schnelles Prototyping und produktionsnahe Entwicklung.',
@@ -48,20 +63,6 @@ export const projects: Project[] = [
     gradient: 'from-[#0d9488] to-[#0891b2]',
     image: 'einkaufsliste.webp',
     imageAlt: 'Einkaufstasche mit Lebensmitteln neben einem Notizblock mit Einkaufsliste',
-  },
-  {
-    title: 'Pflanzenlexikon',
-    description:
-      'Web-App zur Verwaltung von Pflanzendaten mit Java Spring Boot, MongoDB und einem eigenen Frontend zum Durchsuchen, Filtern und Bearbeiten des Pflanzenbestands. Die REST-API lässt sich zusätzlich über die interaktive Swagger-Oberfläche direkt ausprobieren.',
-    tags: ['Java', 'Spring Boot', 'MongoDB', 'REST API'],
-    githubUrl: 'https://github.com/hafner312/Projektarbeit-Pflanzenlexikon',
-    liveUrl: 'https://projektarbeit-pflanzenlexikon.onrender.com/',
-    hostingNote,
-    featured: true,
-    icon: '🌿',
-    gradient: 'from-[#0d9488] to-[#0f766e]',
-    image: 'pflanzenlexikon.webp',
-    imageAlt: 'Laptop mit der Pflanzenlexikon-Oberfläche, umgeben von Zimmerpflanzen',
   },
   {
     title: '4 Gewinnt',
