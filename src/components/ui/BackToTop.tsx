@@ -23,9 +23,12 @@ export function BackToTop() {
           transition={{ duration: 0.22, ease: 'easeOut' }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Zurück nach oben"
-          className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-12 h-12 rounded-full text-white shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
+          className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-12 h-12 rounded-full text-white hover:-translate-y-0.5 transition-all duration-200"
           style={{
             background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-light))',
+            // Heller Ring: sonst geht der Knopf auf dem dunklen Footer unter
+            boxShadow:
+              '0 0 0 2px rgba(255,255,255,0.85), 0 6px 20px rgba(12,43,41,0.45)',
           }}
         >
           <ArrowUp size={20} />

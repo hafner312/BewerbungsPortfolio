@@ -16,7 +16,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="relative" style={{ background: 'var(--color-bg-elevated)' }}>
+    <footer className="relative" style={{ background: 'var(--color-frame)' }}>
       <div
         className="h-1 w-full"
         style={{
@@ -38,22 +38,22 @@ export function Footer() {
               >
                 PH
               </span>
-              <span className="display font-bold text-lg text-[var(--color-text-primary)] tracking-tight">
+              <span className="display font-bold text-lg text-white tracking-tight">
                 Patrik Hafner
               </span>
             </a>
-            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-xs">
+            <p className="text-sm text-[var(--color-frame-muted)] leading-relaxed max-w-xs">
               Applikationsentwickler EFZ (IPA-Wiederholung), mit Fokus auf saubere,
               wartbare Software vom Konzept bis zum Deployment.
             </p>
-            <div className="flex items-center gap-2 mt-4 text-sm text-[var(--color-text-muted)]">
-              <MapPin size={15} style={{ color: 'var(--color-accent)' }} />
+            <div className="flex items-center gap-2 mt-4 text-sm text-[var(--color-frame-muted)]">
+              <MapPin size={15} style={{ color: 'var(--color-frame-accent)' }} />
               Altdorf, Uri – Schweiz
             </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[var(--color-text-muted)] mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-white mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -61,7 +61,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                    className="text-sm text-[var(--color-frame-muted)] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -71,12 +71,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[var(--color-text-muted)] mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-white mb-4">
               Vernetzen
             </h4>
             <a
               href="mailto:hafner312@gmail.com"
-              className="inline-block text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors mb-5"
+              className="inline-block text-sm text-[var(--color-frame-muted)] hover:text-white transition-colors mb-5"
             >
               hafner312@gmail.com
             </a>
@@ -90,9 +90,9 @@ export function Footer() {
                   aria-label={label}
                   className="flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-200 hover:-translate-y-0.5"
                   style={{
-                    borderColor: 'var(--color-border)',
-                    color: 'var(--color-text-secondary)',
-                    background: 'var(--color-bg-surface)',
+                    borderColor: 'var(--color-frame-border)',
+                    color: 'var(--color-frame-text)',
+                    background: 'var(--color-frame-soft)',
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.background = 'var(--color-accent)'
@@ -100,9 +100,9 @@ export function Footer() {
                     e.currentTarget.style.borderColor = 'var(--color-accent)'
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'var(--color-bg-surface)'
-                    e.currentTarget.style.color = 'var(--color-text-secondary)'
-                    e.currentTarget.style.borderColor = 'var(--color-border)'
+                    e.currentTarget.style.background = 'var(--color-frame-soft)'
+                    e.currentTarget.style.color = 'var(--color-frame-text)'
+                    e.currentTarget.style.borderColor = 'var(--color-frame-border)'
                   }}
                 >
                   <Icon size={18} />
@@ -114,16 +114,16 @@ export function Footer() {
 
         <div
           className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: '1px solid var(--color-border)' }}
+          style={{ borderTop: '1px solid var(--color-frame-border)' }}
         >
-          <p className="text-sm text-[var(--color-text-muted)] flex flex-wrap items-center justify-center gap-x-2">
+          <p className="text-sm text-[var(--color-frame-muted)] flex flex-wrap items-center justify-center gap-x-2">
             <span>© {new Date().getFullYear()} Patrik Hafner · Mit React und TypeScript gebaut</span>
             <span aria-hidden="true">·</span>
-            <a href="/BewerbungsPortfolio/impressum.html" className="hover:text-[var(--color-accent)] transition-colors">
+            <a href="/BewerbungsPortfolio/impressum.html" className="hover:text-white transition-colors">
               Impressum
             </a>
             <span aria-hidden="true">·</span>
-            <a href="/BewerbungsPortfolio/datenschutz.html" className="hover:text-[var(--color-accent)] transition-colors">
+            <a href="/BewerbungsPortfolio/datenschutz.html" className="hover:text-white transition-colors">
               Datenschutz
             </a>
           </p>

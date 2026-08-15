@@ -28,6 +28,15 @@
   --color-border: rgba(15, 23, 42, 0.1);
   --color-success: #10b981;
   --color-error: #dc2626;
+
+  /* Dunkler Rahmen fuer Navigation und Footer - aus der Akzentfarbe
+     abgeleitetes Tannengruen, damit beides als Einheit wirkt. */
+  --color-frame: #0c2b29;
+  --color-frame-soft: #123b38;
+  --color-frame-text: #d3e5e1;
+  --color-frame-muted: #93b3ad;
+  --color-frame-border: rgba(255, 255, 255, 0.12);
+  --color-frame-accent: #5eead4;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;

@@ -48,11 +48,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-[0_2px_24px_rgba(15,23,42,0.07)] border-b border-[var(--color-border)]'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
+        scrolled ? 'shadow-[0_4px_24px_rgba(12,43,41,0.28)]' : ''
       }`}
+      style={{
+        // Dunkles Tannengruen, oben minim durchscheinend - beim Scrollen deckend
+        background: scrolled ? 'var(--color-frame)' : 'rgba(12, 43, 41, 0.88)',
+        borderBottom: `1px solid ${scrolled ? 'var(--color-frame-border)' : 'transparent'}`,
+      }}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#hero" className="group flex items-center gap-2.5">
@@ -65,7 +68,7 @@ export function Navbar() {
           >
             PH
           </span>
-          <span className="display font-bold text-lg text-[var(--color-text-primary)] tracking-tight">
+          <span className="display font-bold text-lg text-white tracking-tight">
             Patrik Hafner
           </span>
         </a>
@@ -80,13 +83,13 @@ export function Navbar() {
                 aria-current={aktiv ? 'true' : undefined}
                 className={`group relative px-1 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
                   aktiv
-                    ? 'text-[var(--color-accent)]'
-                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]'
+                    ? 'text-[var(--color-frame-accent)]'
+                    : 'text-[var(--color-frame-text)] hover:text-[var(--color-frame-accent)]'
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute left-1 right-1 -bottom-0.5 h-0.5 rounded-full bg-[var(--color-accent)] origin-left transition-transform duration-300 ${
+                  className={`absolute left-1 right-1 -bottom-0.5 h-0.5 rounded-full bg-[var(--color-frame-accent)] origin-left transition-transform duration-300 ${
                     aktiv ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}
                 />
@@ -106,7 +109,7 @@ export function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+          className="md:hidden text-[var(--color-frame-text)] hover:text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Men\u00fc \u00f6ffnen"
         >
@@ -124,13 +127,19 @@ export function Navbar() {
       />
 
       {menuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-[var(--color-border)] shadow-md px-6 py-4">
+        <div
+          className="md:hidden backdrop-blur-xl shadow-md px-6 py-4"
+          style={{
+            background: 'var(--color-frame)',
+            borderBottom: '1px solid var(--color-frame-border)',
+          }}
+        >
           <ul className="flex flex-col gap-1">
             {[...navLinks, { label: 'Kontakt', href: '#contact' }].map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block py-2.5 px-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:bg-[var(--color-bg-elevated)] transition-colors font-medium"
+                  className="block py-2.5 px-2 rounded-lg text-[var(--color-frame-text)] hover:text-[var(--color-frame-accent)] hover:bg-[var(--color-frame-soft)] transition-colors font-medium"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
