@@ -1,59 +1,88 @@
-import { Award, Code2, Lightbulb, Zap } from 'lucide-react'
+import { Quote } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 
-const stats = [
-  { icon: Award, label: 'Abschluss', value: 'Applikationsentwickler EFZ (IPA-Wiederholung)' },
-  { icon: Zap, label: 'Berufserfahrung', value: '10+ Jahre' },
-  { icon: Code2, label: 'Tech-Stack', value: 'Full-Stack' },
-  { icon: Lightbulb, label: 'Lernbereitschaft', value: 'Sehr hoch' },
+/** Eckdaten als Leiste statt als Kacheln - Kacheln gibt es auf der Seite schon genug */
+const fakten = [
+  { label: 'Abschluss', value: 'Applikationsentwickler EFZ', zusatz: 'IPA-Wiederholung' },
+  { label: 'Berufserfahrung', value: '10+ Jahre', zusatz: 'davon 10 im Metallbau' },
+  { label: 'Schwerpunkt', value: 'Full-Stack', zusatz: 'Datenbank bis UI' },
+  { label: 'Standort', value: 'Altdorf, Uri', zusatz: 'Schweiz' },
 ]
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
+    // Warmer Cremeton - bewusst der einzige warme Abschnitt, damit sich der
+    // persoenliche Teil vom Rest der Seite abhebt.
+    <section id="about" className="py-24 px-6" style={{ background: '#faf6ef' }}>
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="&Uuml;ber mich"
           subtitle="Vom Metallbauer zum Applikationsentwickler"
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-16 items-start">
+          {/* ---------------- Portrait ---------------- */}
           <AnimatedSection>
-            <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-              <div
-                className="w-full h-full rounded-3xl overflow-hidden p-[3px]"
-                style={{
-                  background:
-                    'linear-gradient(135deg, var(--color-accent), var(--color-accent-cyan) 55%, var(--color-accent-2))',
-                  boxShadow: '0 12px 40px rgba(13,148,136,0.25)',
-                }}
-              >
-                <img
-                  src="/BewerbungsPortfolio/photo.jpeg"
-                  alt="Patrik Hafner"
-                  className="w-full h-full object-cover object-top rounded-[21px]"
-                />
-              </div>
-              <div
-                className="absolute -inset-4 rounded-[2rem] -z-10 opacity-20 blur-2xl"
-                style={{ background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-green))' }}
+            <figure className="relative mx-auto w-fit">
+              {/* Farbblock dahinter, leicht gekippt */}
+              <span
+                aria-hidden="true"
+                className="absolute -inset-3 rounded-[26px] -z-10"
+                style={{ background: 'var(--color-accent)', transform: 'rotate(-4deg)' }}
               />
-            </div>
+              <img
+                src="/BewerbungsPortfolio/photo.jpeg"
+                alt="Patrik Hafner"
+                width={320}
+                height={380}
+                loading="lazy"
+                className="relative w-64 md:w-80 aspect-[4/5] object-cover object-top rounded-[22px]"
+                style={{
+                  border: '5px solid #faf6ef',
+                  boxShadow: '0 18px 44px rgba(60, 45, 25, 0.18)',
+                  transform: 'rotate(1.5deg)',
+                }}
+              />
+              <figcaption
+                className="mt-6 text-center text-sm"
+                style={{ color: '#8a7a63' }}
+              >
+                <span className="mono">Patrik Hafner</span> &middot; Altdorf, Uri
+              </figcaption>
+            </figure>
           </AnimatedSection>
 
+          {/* ---------------- Text ---------------- */}
           <AnimatedSection delay={0.1}>
-            <div className="space-y-5 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+            {/* Leitsatz, gross gesetzt */}
+            <div className="relative pl-10 mb-8">
+              <Quote
+                aria-hidden="true"
+                size={34}
+                className="absolute left-0 top-0"
+                style={{ color: 'var(--color-accent)', opacity: 0.35 }}
+              />
+              <p
+                className="display text-xl md:text-2xl leading-snug font-semibold"
+                style={{ color: '#2b2419' }}
+              >
+                Nach über zehn Jahren im Metallbau habe ich noch einmal von vorne
+                angefangen – diesmal mit Code.
+              </p>
+            </div>
+
+            <div className="space-y-5 leading-relaxed text-[15px] md:text-base" style={{ color: '#5b5040' }}>
               <p>
                 Ich bin in Ausbildung zum Applikationsentwickler EFZ (IPA-Wiederholung)
                 und arbeite mit Leidenschaft an sauberer, wartbarer Software.
                 Dabei verbinde ich kreative Ideen mit einer schnellen Auffassungsgabe.
               </p>
               <p>
-                Nach &uuml;ber 10 Jahren als Metallbauer habe ich den Schritt in die
-                Informatik gewagt. Aus dieser Zeit bringe ich pr&auml;zises Arbeiten,
+                Aus meiner Zeit als Metallbauer bringe ich pr&auml;zises Arbeiten,
                 technisches Verst&auml;ndnis, Zuverl&auml;ssigkeit und eine strukturierte
-                Herangehensweise mit.
+                Herangehensweise mit – Eigenschaften, die mir in der Entwicklung
+                t&auml;glich zugutekommen.
               </p>
               <p>
                 Ich arbeite mit modernen Technologien wie React, TypeScript, C#, .NET,
@@ -62,29 +91,35 @@ export function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              {stats.map(({ icon: Icon, label, value }) => (
-                <div key={label} className="card flex items-center gap-3 p-4 rounded-2xl">
-                  <span
-                    className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0 shadow-md"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, var(--color-text-primary), #1e3a4f)',
-                    }}
+            {/* Eckdaten als Leiste mit Trennlinien */}
+            <dl
+              className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-6"
+              style={{ borderTop: '1px solid rgba(120, 100, 70, 0.22)' }}
+            >
+              {fakten.map((f, i) => (
+                <div
+                  key={f.label}
+                  className="pt-5 px-4 first:pl-0"
+                  style={{
+                    borderLeft:
+                      i === 0 ? 'none' : '1px solid rgba(120, 100, 70, 0.18)',
+                  }}
+                >
+                  <dt
+                    className="text-[11px] font-bold uppercase tracking-[0.14em] mb-1.5"
+                    style={{ color: 'var(--color-accent-light)' }}
                   >
-                    <Icon size={18} className="text-white" />
-                  </span>
-                  <div className="min-w-0">
-                    <p className="font-semibold text-sm leading-tight break-words" style={{ color: 'var(--color-text-primary)' }}>
-                      {value}
-                    </p>
-                    <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
-                      {label}
-                    </p>
-                  </div>
+                    {f.label}
+                  </dt>
+                  <dd className="display font-bold text-base leading-tight" style={{ color: '#2b2419' }}>
+                    {f.value}
+                  </dd>
+                  <dd className="text-xs mt-0.5" style={{ color: '#8a7a63' }}>
+                    {f.zusatz}
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </AnimatedSection>
         </div>
       </div>
