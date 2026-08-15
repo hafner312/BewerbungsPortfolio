@@ -4,149 +4,238 @@
 <meta charset="UTF-8">
 <title>Anschreiben – Patrik Hafner</title>
 <style>
+  /* Gleiche Schriften wie Website und Lebenslauf, damit alle Unterlagen
+     zusammengehoerig wirken. Als Kopie in assets/fonts, damit die Vorlage
+     auch ohne node_modules baut. */
+  @font-face { font-family: 'Inter'; font-weight: 400; font-style: normal;
+    src: url('assets/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; font-style: normal;
+    src: url('assets/fonts/inter-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 700; font-style: normal;
+    src: url('assets/fonts/inter-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Space Grotesk'; font-weight: 700; font-style: normal;
+    src: url('assets/fonts/space-grotesk-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 500; font-style: normal;
+    src: url('assets/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); }
+
   @page { size: A4; margin: 0; }
+
   :root {
-    --accent: #1b6e4a;
-    --text: #2b2b2b;
-    --text-light: #555;
+    --gruen: #0c2b29;
+    --akzent: #0d9488;
+    --akzent-hell: #5eead4;
+    --mint: #e9f4f2;
+    --text: #0f172a;
+    --text2: #334155;
+    --muted: #64748b;
+    --linie: rgba(15, 23, 42, 0.12);
   }
+
   * { box-sizing: border-box; }
+
   html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--text);
-    font-size: 14.5px;
-    line-height: 1.5;
+    font-size: 10pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .page {
+
+  .seite {
     width: 210mm;
     min-height: 297mm;
-    display: grid;
-    grid-template-columns: 68% 32%;
     background: #fff;
-  }
-  .main { padding: 14mm 12mm 14mm 16mm; }
-  .sidebar { padding: 14mm 14mm 14mm 8mm; }
-
-  .header {
+    position: relative;
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 12px;
+    flex-direction: column;
   }
-  .avatar {
-    width: 78px;
-    height: 78px;
-    border-radius: 50%;
-    background: var(--accent);
+
+  /* ---------------- Kopfbereich (wie im Lebenslauf) ---------------- */
+  .kopf {
+    background: linear-gradient(135deg, #0f3a36 0%, var(--gruen) 55%, #08211f 100%);
     color: #fff;
+    padding: 9mm 15mm 8mm;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-style: italic;
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', serif;
-    flex-shrink: 0;
+    gap: 7mm;
+    position: relative;
   }
-  .name { font-size: 26px; font-weight: 700; color: var(--accent); }
-  .role { font-size: 14px; color: var(--accent); margin-top: 2px; }
-
-  .meta-line { margin-bottom: 4px; }
-  .place-date { margin: 10px 0 16px; }
-  .recipient { margin-bottom: 18px; }
-  .recipient div { margin-bottom: 2px; }
-
-  .subject { font-weight: 700; margin: 0 0 14px; }
-  .salutation { margin-bottom: 12px; }
-  .body p { margin: 0 0 8px; text-align: left; }
-
-  .closing { margin-top: 4px; }
-  .signature {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 24px;
-    color: var(--text);
-    margin-top: 6px;
-  }
-
-  .section-heading {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-  .section-heading .badge {
-    width: 26px;
-    height: 26px;
+  .kopf::after {
+    content: '';
+    position: absolute;
+    right: -30mm; top: -30mm;
+    width: 90mm; height: 90mm;
     border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: radial-gradient(circle, rgba(45,212,191,0.30) 0%, transparent 68%);
+  }
+  .kopf > * { position: relative; z-index: 1; }
+
+  .foto {
+    width: 23mm; height: 23mm;
+    border-radius: 8mm;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid rgba(255,255,255,0.28);
     flex-shrink: 0;
   }
-  .section-heading h2 {
-    font-size: 15px;
-    color: var(--accent);
-    margin: 0;
-    font-weight: 700;
-  }
-  .sidebar-block .label {
-    font-weight: 700;
-    font-size: 12.5px;
-    color: #111;
-    margin-top: 12px;
-  }
-  .sidebar-block .label:first-child { margin-top: 0; }
-  .sidebar-block .value { color: var(--text-light); margin-bottom: 2px; }
 
-  @media print {
-    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .kopf-name {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 21pt;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
   }
+  .kopf-rolle {
+    color: var(--akzent-hell);
+    font-size: 9.5pt;
+    font-weight: 600;
+    margin-top: 1.2mm;
+  }
+  .kopf-zeile {
+    margin-top: 3mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm 4.5mm;
+    font-size: 8.1pt;
+    color: rgba(255,255,255,0.86);
+  }
+  .kopf-zeile span { white-space: nowrap; }
+  .kopf-zeile b { color: #fff; font-weight: 600; }
+  .kopf-zeile a {
+    color: var(--akzent-hell);
+    text-decoration: underline;
+    text-underline-offset: 1.6px;
+  }
+
+  /* ---------------- Brief ---------------- */
+  .brief {
+    padding: 10mm 15mm 8mm;
+    flex: 1;
+  }
+
+  .empfaenger-zeile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10mm;
+    margin-bottom: 9mm;
+  }
+  .empfaenger { font-size: 9.6pt; color: var(--text2); }
+  .empfaenger .firma { font-weight: 700; color: var(--text); }
+  .ort-datum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.4pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .betreff {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 2mm;
+    line-height: 1.25;
+  }
+  /* kurze Akzentlinie unter dem Betreff, wie die Trenner auf der Website */
+  .betreff-linie {
+    width: 22mm;
+    height: 2px;
+    background: var(--akzent);
+    border-radius: 2px;
+    margin-bottom: 6mm;
+  }
+
+  .anrede { margin: 0 0 4mm; }
+  .text p { margin: 0 0 3.6mm; color: var(--text2); }
+  .text p:last-child { margin-bottom: 0; }
+  .text b { color: var(--text); font-weight: 600; }
+
+  .gruss { margin-top: 6mm; color: var(--text2); }
+  .unterschrift {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 4mm;
+  }
+
+  /* ---------------- Fussleiste mit Eckdaten ---------------- */
+  .fussdaten {
+    background: var(--mint);
+    border-top: 1px solid var(--linie);
+    padding: 5mm 15mm;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4mm 6mm;
+  }
+  .fussdaten .bez {
+    display: block;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--akzent);
+    margin-bottom: 0.6mm;
+  }
+  .fussdaten .wert { font-size: 8.4pt; color: var(--text2); }
+  .fussdaten a { color: var(--text2); text-decoration: underline; text-underline-offset: 1.6px; }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- ================= LEFT / MAIN ================= -->
-  <div class="main">
+<div class="seite">
 
-    <div class="header">
-      <div class="avatar">ph</div>
-      <div>
-        <div class="name">Patrik Hafner</div>
-        <div class="role">Applikationsentwickler EFZ (IPA-Wiederholung)</div>
+  <header class="kopf">
+    <img class="foto" src="assets/photo.jpg" alt="Patrik Hafner">
+    <div>
+      <div class="kopf-name">Patrik Hafner</div>
+      <div class="kopf-rolle">Applikationsentwickler EFZ (IPA-Wiederholung)</div>
+      <div class="kopf-zeile">
+        <span><b>E-Mail</b> <a href="mailto:hafner312@gmail.com">hafner312@gmail.com</a></span>
+        <span><b>Telefon</b> +41 79 501 26 53</span>
+        <span><b>Ort</b> 6460 Altdorf UR</span>
+        <span><b>Portfolio-Website</b> <a href="https://hafner312.github.io/BewerbungsPortfolio/">hafner312.github.io/BewerbungsPortfolio</a></span>
       </div>
     </div>
+  </header>
 
-    <div class="place-date">Altdorf, [Datum]</div>
+  <div class="brief">
 
-    <div class="recipient">
-      <div>[Ansprechperson]</div>
-      <div>[Firma]</div>
-      <div>[Ort / Adresse]</div>
+    <div class="empfaenger-zeile">
+      <div class="empfaenger">
+        <div>[Ansprechperson]</div>
+        <div class="firma">[Firma]</div>
+        <div>[Strasse]</div>
+        <div>[PLZ Ort]</div>
+      </div>
+      <div class="ort-datum">Altdorf, [Datum]</div>
     </div>
 
-    <p class="subject">Bewerbung als [Position]</p>
+    <h1 class="betreff">Bewerbung als [Position]</h1>
+    <div class="betreff-linie"></div>
 
-    <div class="body">
-      <p class="salutation">Sehr geehrte Damen und Herren,</p>
+    <p class="anrede">Guten Tag [Ansprechperson]</p>
 
+    <div class="text">
       <p>
         die Welt der modernen IT fasziniert mich – besonders die Möglichkeit, kreative Lösungen
         zu entwickeln und Teil eines dynamischen Teams zu sein. Deshalb habe ich eine Ausbildung
         zum Applikationsentwickler EFZ an der WISS Zürich absolviert und dabei bereits praktische
         Erfahrung im Betrieb gesammelt.
       </p>
-
       <p>
         Die schulische Ausbildung zum Applikationsentwickler EFZ sowie das dazugehörige
         betriebliche Praktikum habe ich vollständig absolviert; lediglich die Note der
         abschliessenden praktischen Arbeit (IPA) hat für das Diplom knapp nicht ausgereicht.
         Diese möchte ich nun möglichst zeitnah nachholen – und würde mich sehr freuen, dies bei
-        [Firma] tun zu können. Die genauen Konditionen bespreche ich gerne persönlich.
+        <b>[Firma]</b> tun zu können.
       </p>
-
       <p>
         Meine berufliche Laufbahn begann in der Metallverarbeitung, wo ich präzises und
         lösungsorientiertes Arbeiten gelernt habe. Meine Leidenschaft galt jedoch schon immer
@@ -154,49 +243,42 @@
         angeeignet und interessiere mich zudem für IT-Sicherheit, Cloud-Dienste und moderne
         Infrastruktur.
       </p>
-
       <p>
-        Was mich besonders an [Firma] anspricht, ist [individuell ergänzen – z. B. die
+        Was mich besonders an <b>[Firma]</b> anspricht, ist [individuell ergänzen – z. B. die
         Kombination aus technischer Tiefe, Kundenkontakt und Innovationsgeist]. Ich bringe eine
         hohe Lernbereitschaft, Eigeninitiative und gute kommunikative Fähigkeiten mit und möchte
         Teil Ihres Unternehmens werden.
       </p>
-
       <p>
-        Eine Anstellung ist für mich ab dem 01.08.2026 möglich. Ich freue mich auf die
-        Gelegenheit, Sie persönlich kennenzulernen.
+        Eine Anstellung ist per sofort möglich. Über die Gelegenheit, Sie persönlich
+        kennenzulernen, würde ich mich sehr freuen.
       </p>
-
-      <p class="closing">Mit freundlichen Grüßen</p>
-      <div class="signature">Patrik Hafner</div>
     </div>
 
+    <p class="gruss">Freundliche Grüsse</p>
+    <div class="unterschrift">Patrik Hafner</div>
   </div>
 
-  <!-- ================= RIGHT / SIDEBAR ================= -->
-  <div class="sidebar">
-    <div class="section-heading">
-      <div class="badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      </div>
-      <h2>Persönliche Daten</h2>
+  <div class="fussdaten">
+    <div>
+      <span class="bez">Anschrift</span>
+      <span class="wert">Hagenstrasse 41<br>6460 Altdorf UR</span>
     </div>
-    <div class="sidebar-block">
-      <div class="label">E-Mail</div>
-      <div class="value">hafner312@gmail.com</div>
-      <div class="label">Anschrift</div>
-      <div class="value">Patrik Hafner<br>Hagenstrasse 41<br>6460 Altdorf Uri</div>
-      <div class="label">Geburtsdatum</div>
-      <div class="value">18.03.1994</div>
-      <div class="label">Staatsbürgerschaft</div>
-      <div class="value">Schweiz</div>
-      <div class="label">Telefon</div>
-      <div class="value">+41 79 501 26 53</div>
-      <div class="label">Geburtsort</div>
-      <div class="value">Altdorf</div>
+    <div>
+      <span class="bez">Geburtsdatum</span>
+      <span class="wert">18.03.1994, Altdorf UR</span>
+    </div>
+    <div>
+      <span class="bez">Staatsbürgerschaft</span>
+      <span class="wert">Schweiz</span>
+    </div>
+    <div>
+      <span class="bez">Beilagen</span>
+      <span class="wert">Lebenslauf, Zeugnisse</span>
     </div>
   </div>
 
 </div>
+
 </body>
 </html>
