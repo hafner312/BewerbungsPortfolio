@@ -2,12 +2,9 @@ import { Award, ExternalLink, Github, Info } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Badge } from '../ui/Badge'
-import { useSpotlight } from '../ui/useSpotlight'
 import { projects } from '../../data/projects'
 
 export function Projects() {
-  const onMove = useSpotlight()
-
   return (
     <section id="projects" className="py-24 px-6" style={{ background: 'var(--color-bg-surface)' }}>
       <div className="max-w-6xl mx-auto">
@@ -22,8 +19,7 @@ export function Projects() {
             return (
               <AnimatedSection key={project.title} delay={i * 0.08}>
                 <div
-                  onMouseMove={onMove}
-                  className={`card card-project spotlight group relative h-full flex flex-col rounded-2xl overflow-hidden ${
+                  className={`card card-project group relative h-full flex flex-col rounded-2xl overflow-hidden ${
                     isHighlight ? 'pulse-ring' : ''
                   }`}
                   style={

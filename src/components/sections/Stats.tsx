@@ -1,7 +1,6 @@
 import { AppWindow, Boxes, Layers, Timer } from 'lucide-react'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { CountUp } from '../ui/CountUp'
-import { useSpotlight } from '../ui/useSpotlight'
 import { projects } from '../../data/projects'
 import { skills } from '../../data/skills'
 
@@ -41,8 +40,6 @@ const kennzahlen = [
 ]
 
 export function Stats() {
-  const onMove = useSpotlight()
-
   return (
     <section
       className="py-16 px-6 relative overflow-hidden"
@@ -54,10 +51,7 @@ export function Stats() {
           const Icon = k.icon
           return (
             <AnimatedSection key={k.label} delay={i * 0.08}>
-              <div
-                onMouseMove={onMove}
-                className="card spotlight h-full rounded-2xl p-5 md:p-6 text-center flex flex-col items-center gap-2"
-              >
+              <div className="card h-full rounded-2xl p-5 md:p-6 text-center flex flex-col items-center gap-2">
                 <span
                   className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-1"
                   style={{
