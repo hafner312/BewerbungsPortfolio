@@ -110,7 +110,7 @@ export function Projects() {
                         damit er sich klar vom Tuerkis der Demo abhebt */}
                     <div
                       className="flex flex-wrap items-center gap-3 pt-4 mt-1"
-                      style={{ borderTop: '1px solid rgba(13,148,136,0.18)' }}
+                      style={{ borderTop: '1px solid rgba(30,58,80,0.14)' }}
                     >
                       {project.githubUrl && (
                         <a
