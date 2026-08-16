@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: 'Pflanzenlexikon',
     description:
-      'Web-App zur Verwaltung von Pflanzendaten mit Java Spring Boot, MongoDB und einem eigenen Frontend zum Durchsuchen, Filtern und Bearbeiten des Pflanzenbestands. Die REST-API lässt sich zusätzlich über die interaktive Swagger-Oberfläche direkt ausprobieren.',
+      'Web-App zur Verwaltung von Pflanzendaten mit Java Spring Boot, MongoDB und einem eigenen Frontend: Bestand durchsuchen und bearbeiten, eigene Bilder hochladen, eine Statistik, die per MongoDB-Aggregation direkt in der Datenbank gerechnet wird, sowie ein Blühkalender übers ganze Jahr. Die REST-API lässt sich zusätzlich über die interaktive Swagger-Oberfläche direkt ausprobieren.',
     tags: ['Java', 'Spring Boot', 'MongoDB', 'REST API'],
     githubUrl: 'https://github.com/hafner312/Projektarbeit-Pflanzenlexikon',
     liveUrl: 'https://projektarbeit-pflanzenlexikon.onrender.com/',
