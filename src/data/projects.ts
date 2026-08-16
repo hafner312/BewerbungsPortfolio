@@ -1,7 +1,10 @@
 import type { Project } from '../types'
 
+// Gemessen, nicht geschätzt: Ein kalter Render-Dienst brauchte über drei
+// Minuten bis zur ersten Antwort. Lieber ehrlich zu viel angeben als zu wenig
+// – wer nach der versprochenen Minute nichts sieht, hält die Demo für kaputt.
 const hostingNote =
-  'Kostenlos gehostet: Bei Inaktivität schläft der Server ein, der erste Aufruf kann dann bis zu ca. 60 Sekunden dauern – danach läuft alles normal schnell.'
+  'Kostenlos gehostet: Bei Inaktivität pausiert der Server. Der erste Aufruf weckt ihn wieder auf und kann ein bis drei Minuten dauern – danach läuft alles normal schnell.'
 
 export const projects: Project[] = [
   {
@@ -39,10 +42,12 @@ export const projects: Project[] = [
   {
     title: 'BookBuddy',
     description:
-      'Fullstack-Anwendung zur Verwaltung von Büchern mit React/Vite-Frontend und Spring-Boot-Backend. Modulare Struktur für schnelles Prototyping und produktionsnahe Entwicklung.',
+      'Persönliche Bibliothek als Fullstack-Anwendung: Bücher erfassen, nach Lesestatus, Kategorie und Bewertung filtern und den Lesefortschritt seitengenau verfolgen. React mit TypeScript im Frontend, Spring Boot mit JPA im Backend – beim Bauen zu einem einzigen Dienst zusammengelegt, damit die Anwendung aus einer Hand ausgeliefert wird.',
     tags: ['React', 'Vite', 'Spring Boot', 'Java'],
     githubUrl: 'https://github.com/hafner312/Book-Buddy',
-    liveUrl: 'https://bookbuddy-frontend-o8mk.onrender.com',
+    // Ein Dienst liefert Frontend und API: Der frühere getrennte
+    // Frontend-Dienst entfällt, damit nur ein Server aufwachen muss.
+    liveUrl: 'https://book-buddy-6xht.onrender.com',
     hostingNote,
     featured: true,
     icon: '📚',
