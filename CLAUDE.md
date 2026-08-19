@@ -17,6 +17,8 @@ npm run preview     # preview the production build locally
 
 No test suite is configured. There is no lint script in `package.json` either — rely on `tsc -b` (run as part of `build`) to catch type errors.
 
+**F5** ("1) Webseite starten und im Browser debuggen") starts the dev server and opens it in an isolated Chrome window (`.chrome-debug-profile/`, gitignored), separate from the normal browser profile.
+
 Environment: copy `.env.example` to `.env.local` and fill in `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` (used by `src/lib/emailjs.ts` for the contact form). `.env.local` already exists in this checkout — never print or commit its contents.
 
 Deployment is automatic: push to `main` triggers `.github/workflows/deploy.yml`, which builds with the EmailJS values from GitHub Secrets and publishes `dist/` to GitHub Pages.

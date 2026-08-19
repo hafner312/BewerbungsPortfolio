@@ -34,6 +34,9 @@ dist-ssr/
 # Editor
 .vscode/*
 !.vscode/extensions.json
+
+# Debug-Profil (VS-Code-Webseitenvorlage)
+.chrome-debug-profile/
 .idea
 .DS_Store
 *.suo

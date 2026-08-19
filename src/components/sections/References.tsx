@@ -4,16 +4,23 @@ import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
 
 /**
- * Oeffentlich gezeigt wird nur das eidgenoessische Faehigkeitszeugnis: Es
- * stammt von einer Pruefungsbehoerde und enthaelt keine Unterschriften und
- * Kontaktdaten einzelner Privatpersonen.
+ * Oeffentlich gezeigt werden nur Zeugnisse von Pruefungsbehoerden/Schulen,
+ * unterzeichnet von Amtspersonen in offizieller Funktion - nicht private
+ * Kontaktdaten Dritter. Personenkennziffern (z. B. AHV-Nummer) werden vor
+ * der Veroeffentlichung geschwaerzt.
  *
  * Die Arbeitszeugnisse frueherer Arbeitgeber liegen bewusst NICHT im
  * oeffentlichen Ordner (siehe unterlagen-privat/, gitignoriert) - sie tragen
- * Namen und Unterschriften der Unterzeichnenden. Sie werden der Bewerbung
- * beigelegt statt weltweit abrufbar gemacht.
+ * private Telefonnummern der Unterzeichnenden fuer Referenzauskuenfte. Sie
+ * werden der Bewerbung beigelegt statt weltweit abrufbar gemacht.
  */
 const documents = [
+  {
+    title: 'Abschlusszeugnis Applikationsentwickler EFZ',
+    caption: 'Schulisches Abschlusszeugnis, WISS Schulen für Wirtschaft Informatik Immobilien, Zürich, 8. Juli 2026.',
+    image: '/BewerbungsPortfolio/zeugnisse/abschlusszeugnis-applikationsentwickler-efz.jpg',
+    pdf: '/BewerbungsPortfolio/zeugnisse/abschlusszeugnis-applikationsentwickler-efz.pdf',
+  },
   {
     title: 'Fähigkeitszeugnis Metallbauer EFZ',
     caption: 'Eidgenössisches Fähigkeitszeugnis, Amt für Berufsbildung und Mittelschulen Uri, 23. Juni 2015.',
@@ -50,7 +57,7 @@ export function References() {
               className="transition-transform duration-300"
               style={{ transform: expanded ? 'rotate(180deg)' : 'none' }}
             />
-            {expanded ? 'Zeugnis ausblenden' : 'Fähigkeitszeugnis anzeigen'}
+            {expanded ? 'Zeugnisse ausblenden' : 'Zeugnisse anzeigen'}
           </button>
         </div>
 

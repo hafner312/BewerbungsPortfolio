@@ -6,10 +6,18 @@ $source = Join-Path $PSScriptRoot "source.html"
 $siteOutput = Join-Path $root "public\bewerbungsunterlagen\bewerbung.pdf"
 $tmp = Join-Path $PSScriptRoot "output.pdf"
 
+# Pfad und Adresse muessen in Anfuehrungszeichen stehen: Der Repository-Pfad
+# enthaelt mit "Meine Apps" ein Leerzeichen. Ohne Quoting zerlegt Edge das
+# Argument und bricht mit "Multiple targets are not supported in headless mode"
+# ab. Frueher lag das Repository unter einem Pfad ohne Leerzeichen, deshalb
+# fiel es lange nicht auf.
 $uri = "file:///$($source -replace '\\','/')"
 Start-Process -FilePath $edge -ArgumentList @(
-    "--headless", "--disable-gpu", "--no-pdf-header-footer",
-    "--print-to-pdf=$tmp", "--print-to-pdf-no-header", $uri
+    "--headless",
+    "--disable-gpu",
+    "--no-pdf-header-footer",
+    "--print-to-pdf=`"$tmp`"",
+    "`"$uri`""
 ) -Wait -NoNewWindow
 
 if (-not (Test-Path $tmp)) { throw "PDF wurde nicht erzeugt: $tmp" }

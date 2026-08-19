@@ -16,10 +16,17 @@ $edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
 function Build-Pdf($quelle, $ziel) {
     $tmp = Join-Path $PSScriptRoot "output.pdf"
+    # Pfad und Adresse muessen in Anfuehrungszeichen stehen: Der Repository-Pfad
+    # enthaelt mit "Meine Apps" ein Leerzeichen. Ohne Quoting zerlegt Edge das
+    # Argument und bricht mit "Multiple targets are not supported in headless
+    # mode" ab.
     $uri = "file:///$($quelle -replace '\\','/')"
     Start-Process -FilePath $edge -ArgumentList @(
-        "--headless", "--disable-gpu", "--no-pdf-header-footer",
-        "--print-to-pdf=$tmp", "--print-to-pdf-no-header", $uri
+        "--headless",
+        "--disable-gpu",
+        "--no-pdf-header-footer",
+        "--print-to-pdf=`"$tmp`"",
+        "`"$uri`""
     ) -Wait -NoNewWindow
 
     if (-not (Test-Path $tmp)) { throw "PDF wurde nicht erzeugt: $tmp" }
