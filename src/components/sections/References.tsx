@@ -37,7 +37,7 @@ export function References() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title="Zeugnisse"
-          subtitle="Qualifikationsnachweis – Arbeitszeugnisse sende ich gerne auf Anfrage zu"
+          subtitle="Abschluss- und Fähigkeitszeugnis – Arbeitszeugnisse sende ich gerne auf Anfrage zu"
         />
 
         <div className="flex justify-center mb-10">
